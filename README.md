@@ -1,4 +1,4 @@
-# SwiftUIMenuBar
-A tutorial for creating a menu bar application in SwiftUI
+# Deep Breath
+A macOS app to calm your mind
 
-Tutorial article on Medium: [Read Tutorial](https://medium.com/infinite-token/creating-a-macos-menu-bar-application-using-swiftui-54572a5d5f87)
+[https://deepbreath.ju.mp/](https://deepbreath.ju.mp/)
