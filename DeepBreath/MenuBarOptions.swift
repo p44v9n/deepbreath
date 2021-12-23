@@ -1,22 +1,14 @@
-//
-//  ContentView.swift
-//  SwiftUIMenuBar
-//
-//  Created by Aaron Wright on 12/18/19.
-//  Copyright © 2019 Aaron Wright. All rights reserved.
-//
-
 import SwiftUI
 
-
-struct ContentView: View {
-    @State var selectedTime = 0
+struct MenuBarOptions: View {
+    @State var count = 5
     
     var body: some View {
         HStack {
-            Picker("", selection: $selectedTime) {
+            Picker("", selection: $count) {
                 Text("5 breaths").tag(5)
                 Text("10 breaths").tag(10)
+                Text("15 breaths").tag(15)
             }
                 .frame(maxWidth: 120)
         
@@ -35,8 +27,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MenuBarOptions_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MenuBarOptions()
     }
 }

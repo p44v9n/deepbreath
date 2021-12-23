@@ -9,25 +9,27 @@
 import SwiftUI
 
 struct PrefsView: View {
+    @Binding var defaultCount
     
-    @State private var launchOnLogin = true
-    @State private var checkForUpdates = true
-    @State private var defaultCount = 5
+    @State var launchOnLogin = false
+    @State var checkForUpdates = false
 
     var body: some View {
+        
         VStack(alignment: .leading) {
 
             Toggle("Launch on login", isOn: $launchOnLogin)
+                .disabled(true)
             Toggle("Automatically check for updates", isOn: $checkForUpdates)
+                .disabled(true)
             
             Divider()
                 .padding(.vertical, 8)
             HStack{
-                Text("Default amount:")
-                Spacer()
-                Picker("", selection: $defaultCount) {
+                Picker("Default amount:", selection: $defaultCount) {
                     Text("5 breaths").tag(5)
                     Text("10 breaths").tag(10)
+                    Text("15 breaths").tag(15)
                 }
             }
         }
