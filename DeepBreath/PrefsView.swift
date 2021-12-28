@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PrefsView: View {
-    @Binding var defaultCount
+    @Binding var defaultCount: Int
     
     @State var launchOnLogin = false
     @State var checkForUpdates = false
@@ -39,8 +39,11 @@ struct PrefsView: View {
     
 }
 
+/*
 struct PrefsView_Previews: PreviewProvider {
+    @Binding var defaultCount: Int
     static var previews: some View {
-        PrefsView()
+        PrefsView(defaultCount: $defaultCount)
     }
 }
+*/

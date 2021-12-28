@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  SwiftUIMenuBar
-//
-//  Created by Aaron Wright on 12/18/19.
-//  Copyright © 2019 Aaron Wright. All rights reserved.
-//
-
 import Cocoa
 import SwiftUI
 
@@ -20,13 +12,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         // Create the SwiftUI view that provides the window contents.
-        let menuBarOptions = MenuBarOptions()
+        let popoverView = PopoverView(defaultCountImport: $defaultCount)
         
         // Create the popover
         let popover = NSPopover()
         popover.contentSize = NSSize(width: 400, height: 400)
         popover.behavior = .transient
-        popover.contentViewController = NSHostingController(rootView: menuBarOptions)
+        popover.contentViewController = NSHostingController(rootView: popoverView)
         self.popover = popover
         
         // Create the status item
@@ -52,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func openPrefs(){
         NSLog("Open preferences window")
-        let prefsView = PrefsView()
+        let prefsView = PrefsView(defaultCount: $defaultCount)
 
         let preferencesWindow = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 700, height: 610),
@@ -74,7 +66,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         preferencesWindow.orderFrontRegardless()
     }
     
-    @objc func startBreaths(){
-        
-    }
 }
