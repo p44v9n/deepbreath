@@ -4,7 +4,7 @@ import SwiftUI
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    @State var defaultCount = 5
+    @State var count = 5
     
     var popover: NSPopover!
     var statusBarItem: NSStatusItem!
@@ -12,7 +12,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         // Create the SwiftUI view that provides the window contents.
-        let popoverView = PopoverView(defaultCountImport: $defaultCount)
+        //let popoverView = PopoverView(defaultCountImport: $defaultCount)
+        let popoverView = PopoverView(count: $count)
         
         // Create the popover
         let popover = NSPopover()
@@ -44,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func openPrefs(){
         NSLog("Open preferences window")
-        let prefsView = PrefsView(defaultCount: $defaultCount)
+        let prefsView = PrefsView(count: $count)
 
         let preferencesWindow = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 700, height: 610),

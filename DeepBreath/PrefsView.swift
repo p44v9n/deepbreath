@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PrefsView: View {
-    @Binding var defaultCount: Int
+    @Binding var count: Int
     
     @State var launchOnLogin = false
     @State var checkForUpdates = false
@@ -23,15 +23,20 @@ struct PrefsView: View {
             Toggle("Automatically check for updates", isOn: $checkForUpdates)
                 .disabled(true)
             
-            Divider()
-                .padding(.vertical, 8)
+            //Divider().padding(.vertical, 8)
+            
             HStack{
-                Picker("Default amount:", selection: $defaultCount) {
+                Picker("Default amount:", selection: $count) {
                     Text("5 breaths").tag(5)
                     Text("10 breaths").tag(10)
                     Text("15 breaths").tag(15)
                 }
             }
+            
+            Divider().padding(.vertical, 8)
+            
+            Text("Contribute at:")
+            Link("https://github.com/p44v9n/deepbreath", destination: URL(string: "https://github.com/p44v9n/deepbreath")!)
         }
         .padding(40)
         .frame(maxWidth: 400)
