@@ -6,7 +6,7 @@ struct PopoverView: View {
     @State var animationVisible = false
     
     var body: some View {
-        
+            
             if (!animationVisible) {
                 HStack {
                     Picker("How many breaths:", selection: $count) {
@@ -34,7 +34,7 @@ struct PopoverView: View {
             else {
                 HStack {
                     
-                    GifImage("white")
+                    GifImage("black")
                     
                     // this timer stuff isn't working
                     let time = 15 * self.count
@@ -46,7 +46,7 @@ struct PopoverView: View {
                 }
               
                 .frame(
-                    minWidth: 338,
+                    minWidth: 250,
                     minHeight: 250
                     )
             }
