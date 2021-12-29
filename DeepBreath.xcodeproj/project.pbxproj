@@ -17,7 +17,6 @@
 		EBAB29D8277BC64F00C8AB04 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EBAB29D7277BC64F00C8AB04 /* README.md */; };
 		EBAB29E1277BDC5B00C8AB04 /* white.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBAB29DF277BDC5B00C8AB04 /* white.gif */; };
 		EBAB29E2277BDC5B00C8AB04 /* black.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBAB29E0277BDC5B00C8AB04 /* black.gif */; };
-		EBC11EF9277BBB490005BA5B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EBC11EF8277BBB490005BA5B /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,7 +46,6 @@
 		EBAB29D7277BC64F00C8AB04 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EBAB29DF277BDC5B00C8AB04 /* white.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = white.gif; sourceTree = "<group>"; };
 		EBAB29E0277BDC5B00C8AB04 /* black.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = black.gif; sourceTree = "<group>"; };
-		EBC11EF8277BBB490005BA5B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +62,6 @@
 		459A278423AA910A003D50EC = {
 			isa = PBXGroup;
 			children = (
-				EBC11EF8277BBB490005BA5B /* Podfile */,
 				EBAB29E0277BDC5B00C8AB04 /* black.gif */,
 				EBAB29DF277BDC5B00C8AB04 /* white.gif */,
 				459A278F23AA910B003D50EC /* DeepBreath */,
@@ -177,7 +174,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBAB29D8277BC64F00C8AB04 /* README.md in Resources */,
-				EBC11EF9277BBB490005BA5B /* Podfile in Resources */,
 				EBAB29E2277BDC5B00C8AB04 /* black.gif in Resources */,
 				459A279B23AA910B003D50EC /* Main.storyboard in Resources */,
 				459A279823AA910B003D50EC /* Preview Assets.xcassets in Resources */,

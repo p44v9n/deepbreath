@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PrefsView: View {
-    @Binding var count: Int
+    @Binding var defaultCount: Int
     
     @State var launchOnLogin = false
     @State var checkForUpdates = false
@@ -26,7 +26,8 @@ struct PrefsView: View {
             //Divider().padding(.vertical, 8)
             
             HStack{
-                Picker("Default amount:", selection: $count) {
+                Picker("Default amount:", selection: $defaultCount) {
+                    Text("3 breaths").tag(3)
                     Text("5 breaths").tag(5)
                     Text("10 breaths").tag(10)
                     Text("15 breaths").tag(15)

@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct PopoverView: View {
-    @Binding var count : Int
-    //@Binding var defaultCountImport: Int
+    
+    @State var count : Int
     @State var animationVisible = false
     
     var body: some View {
@@ -10,7 +10,7 @@ struct PopoverView: View {
             if (!animationVisible) {
                 HStack {
                     Picker("How many breaths:", selection: $count) {
-                    //Text("3 breaths").tag(3)
+                    Text("3 breaths").tag(3)
                     Text("5 breaths").tag(5)
                     //Text("10 breaths").tag(10)
                     //Text("15 breaths").tag(15)
@@ -35,9 +35,11 @@ struct PopoverView: View {
                 HStack {
                     
                     GifImage("black")
-                    
+                    /*Text("Count: ")
+                    Text(String(count))
+                    */
                     // this timer stuff isn't working
-                    let time = 15 * self.count
+                    let time = 15 * count
                     let timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(time), repeats: false) { (timer) in
                         self.animationVisible = false
                     }
