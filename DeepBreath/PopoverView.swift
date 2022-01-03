@@ -10,10 +10,11 @@ struct PopoverView: View {
             if (!animationVisible) {
                 HStack {
                     Picker("How many breaths:", selection: $count) {
+                    Text("1 breath").tag(1) // for debugging — comment out
                     Text("3 breaths").tag(3)
                     Text("5 breaths").tag(5)
-                    //Text("10 breaths").tag(10)
-                    //Text("15 breaths").tag(15)
+                    Text("10 breaths").tag(10)
+                    Text("15 breaths").tag(15)
                 }
                     .frame(maxWidth: 120)
                     .labelsHidden()
@@ -32,25 +33,31 @@ struct PopoverView: View {
                 .padding(10)
             }
             else {
-                HStack {
-                    
-                    GifImage("black")
-                    /*Text("Count: ")
-                    Text(String(count))
-                    */
-                    // this timer stuff isn't working
-                    let time = 15 * count
+                ZStack(alignment: .top){
+                    // Animation
+                    GifImage("grey")
+                    let countAsDouble = Double(count)
+                    let time = 10.2 * countAsDouble
                     let timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(time), repeats: false) { (timer) in
                         self.animationVisible = false
                     }
-                    // after 15s x $count
-                    // animationVisible = false
+                    
+                    // Close button
+                    Button{
+                        print("press")
+                        animationVisible = false
+                        
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                    }
+                 
                 }
               
                 .frame(
                     minWidth: 250,
                     minHeight: 250
-                    )
+                )
+                .padding(10)
             }
         }
     }
