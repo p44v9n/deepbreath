@@ -26,3 +26,5 @@ A macOS app to calm your mind
 - Add reminders (automatically pop up every x hours when Mac is on)
 - Add contextual reminders (e.g. automatically pop up before a calendar event)
 - Add dark mode
+
+![Preview screens](https://i.imgur.com/f2m4LAI.png)
