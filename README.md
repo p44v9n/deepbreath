@@ -9,6 +9,7 @@ A macOS app to calm your mind
 - Use a library for animation e.g. [SwiftyGif](https://github.com/kirualex/SwiftyGif) (can't get working on MacOS) or Lottie or similar
     - to make it easier to track repeats of gif
     - to get rid of the horrible webview zoom/scroll bars
+- ✅ ~~Add launch on login~~ thanks @sindresohus! https://github.com/sindresorhus/LaunchAtLogin
 - ✅ ~~right click opens menu allowing you to quit app entirely~~
 - ✅ ~~reset animation view when clicking off / closing popover~~
 - ✅ ~~end gif looping after corrent number of counts~~
@@ -16,9 +17,7 @@ A macOS app to calm your mind
 
 ## Roadmap
 
-- MVP: gif animation to guide x number of deep breaths
-- Change default amount
-- Add launch on login
+- Set default amount in preferences
 - Add automatic updates
 - Choose from range of animations
 - Customise animation / breathing timing
