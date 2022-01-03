@@ -10,7 +10,7 @@ struct PopoverView: View {
             if (!animationVisible) {
                 HStack {
                     Picker("How many breaths:", selection: $count) {
-                    Text("1 breath").tag(1) // for debugging — comment out
+                    //Text("1 breath").tag(1) // for debugging — comment out
                     Text("3 breaths").tag(3)
                     Text("5 breaths").tag(5)
                     Text("10 breaths").tag(10)
