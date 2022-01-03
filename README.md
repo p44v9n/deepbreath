@@ -10,7 +10,7 @@ A macOS app to calm your mind
     - to make it easier to track repeats of gif
     - to get rid of the horrible webview zoom/scroll bars
 - ✅ ~~right click opens menu allowing you to quit app entirely~~
-- ✅ ~~ reset animation view when clicking off / closing popover~~
+- ✅ ~~reset animation view when clicking off / closing popover~~
 - ✅ ~~end gif looping after corrent number of counts~~
 - ✅ ~~make menu popover scale / change size correctly~~
 
