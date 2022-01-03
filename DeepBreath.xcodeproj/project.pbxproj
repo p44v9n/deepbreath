@@ -12,11 +12,11 @@
 		459A279523AA910B003D50EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459A279423AA910B003D50EC /* Assets.xcassets */; };
 		459A279823AA910B003D50EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459A279723AA910B003D50EC /* Preview Assets.xcassets */; };
 		459A279B23AA910B003D50EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459A279923AA910B003D50EC /* Main.storyboard */; };
-		EB3DF4092783616D00E41D40 /* grey.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB3DF4082783616D00E41D40 /* grey.gif */; };
+		EB3DF40B27836FA300E41D40 /* grey.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB3DF40A27836FA300E41D40 /* grey.gif */; };
+		EB3DF40E2783775400E41D40 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = EB3DF40D2783775400E41D40 /* LaunchAtLogin */; };
 		EB868DBC2773BAED0058CA68 /* PrefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB868DBB2773BAED0058CA68 /* PrefsView.swift */; };
 		EBAB29D6277BBFB000C8AB04 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB29D5277BBFB000C8AB04 /* GifImage.swift */; };
 		EBAB29D8277BC64F00C8AB04 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EBAB29D7277BC64F00C8AB04 /* README.md */; };
-		EBAB29E1277BDC5B00C8AB04 /* white.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBAB29DF277BDC5B00C8AB04 /* white.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,11 +41,10 @@
 		459A279A23AA910B003D50EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		459A279C23AA910B003D50EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		459A279D23AA910B003D50EC /* DeepBreath.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeepBreath.entitlements; sourceTree = "<group>"; };
-		EB3DF4082783616D00E41D40 /* grey.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = grey.gif; path = ../../renders/gifGunGIFS/grey.gif; sourceTree = "<group>"; };
+		EB3DF40A27836FA300E41D40 /* grey.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = grey.gif; sourceTree = "<group>"; };
 		EB868DBB2773BAED0058CA68 /* PrefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsView.swift; sourceTree = "<group>"; };
 		EBAB29D5277BBFB000C8AB04 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		EBAB29D7277BC64F00C8AB04 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		EBAB29DF277BDC5B00C8AB04 /* white.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = white.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3DF40E2783775400E41D40 /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,8 +62,7 @@
 		459A278423AA910A003D50EC = {
 			isa = PBXGroup;
 			children = (
-				EB3DF4082783616D00E41D40 /* grey.gif */,
-				EBAB29DF277BDC5B00C8AB04 /* white.gif */,
+				EB3DF40A27836FA300E41D40 /* grey.gif */,
 				459A278F23AA910B003D50EC /* DeepBreath */,
 				459A278E23AA910B003D50EC /* Products */,
 				EB4EEF74277BB70600EF6830 /* Frameworks */,
@@ -120,6 +119,7 @@
 				459A278923AA910B003D50EC /* Sources */,
 				459A278A23AA910B003D50EC /* Frameworks */,
 				459A278B23AA910B003D50EC /* Resources */,
+				EB3DF40F278377BB00E41D40 /* Copy "Launch at Login Helper" */,
 				EB4EEF70277BB5C700EF6830 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -128,6 +128,7 @@
 			);
 			name = DeepBreath;
 			packageProductDependencies = (
+				EB3DF40D2783775400E41D40 /* LaunchAtLogin */,
 			);
 			productName = SwiftUIMenuBar;
 			productReference = 459A278D23AA910B003D50EC /* DeepBreath.app */;
@@ -158,6 +159,7 @@
 			);
 			mainGroup = 459A278423AA910A003D50EC;
 			packageReferences = (
+				EB3DF40C2783775400E41D40 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = 459A278E23AA910B003D50EC /* Products */;
 			projectDirPath = "";
@@ -175,14 +177,34 @@
 			files = (
 				EBAB29D8277BC64F00C8AB04 /* README.md in Resources */,
 				459A279B23AA910B003D50EC /* Main.storyboard in Resources */,
-				EB3DF4092783616D00E41D40 /* grey.gif in Resources */,
+				EB3DF40B27836FA300E41D40 /* grey.gif in Resources */,
 				459A279823AA910B003D50EC /* Preview Assets.xcassets in Resources */,
-				EBAB29E1277BDC5B00C8AB04 /* white.gif in Resources */,
 				459A279523AA910B003D50EC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EB3DF40F278377BB00E41D40 /* Copy "Launch at Login Helper" */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy \"Launch at Login Helper\"";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		459A278923AA910B003D50EC /* Sources */ = {
@@ -266,7 +288,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -333,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DeepBreath/DeepBreath.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -358,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DeepBreath/DeepBreath.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -399,6 +423,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EB3DF40C2783775400E41D40 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EB3DF40D2783775400E41D40 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB3DF40C2783775400E41D40 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 459A278523AA910A003D50EC /* Project object */;
 }

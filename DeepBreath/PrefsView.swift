@@ -7,19 +7,19 @@
 //
 
 import SwiftUI
+import LaunchAtLogin
 
 struct PrefsView: View {
     @Binding var defaultCount: Int
     
-    @State var launchOnLogin = false
+
     @State var checkForUpdates = false
 
     var body: some View {
         
         VStack(alignment: .leading) {
 
-            Toggle("Launch on login", isOn: $launchOnLogin)
-                .disabled(true)
+            LaunchAtLogin.Toggle()
             Toggle("Automatically check for updates", isOn: $checkForUpdates)
                 .disabled(true)
             
@@ -32,6 +32,7 @@ struct PrefsView: View {
                     Text("10 breaths").tag(10)
                     Text("15 breaths").tag(15)
                 }
+                .disabled(true)
             }
             
             Divider().padding(.vertical, 8)
