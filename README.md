@@ -26,5 +26,6 @@ A macOS app to calm your mind
 - Add contextual reminders (e.g. automatically pop up before a calendar event)
 - Add dark mode
 - Add a pretty dmg installer https://github.com/sindresorhus/create-dmg
+- Add user-configurable global hotkey https://github.com/sindresorhus/KeyboardShortcuts
 
 ![Preview screens](https://i.imgur.com/f2m4LAI.png)
