@@ -7,7 +7,7 @@ import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    @State var defaultCount = 5
+    @State var defaultCount : Int
     
     var popover: NSPopover!
     var statusBarItem: NSStatusItem!

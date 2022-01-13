@@ -11,7 +11,6 @@ import LaunchAtLogin
 
 struct PrefsView: View {
     @Binding var defaultCount: Int
-    
 
     @State var checkForUpdates = false
 
@@ -32,7 +31,7 @@ struct PrefsView: View {
                     Text("10 breaths").tag(10)
                     Text("15 breaths").tag(15)
                 }
-                .disabled(true)
+//                .disabled(true)
             }
             
             Divider().padding(.vertical, 8)

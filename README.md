@@ -6,9 +6,8 @@ A macOS app to calm your mind
 ## Todo
 
 - Default amount in Prefs doesn't work
-- Use a library for animation e.g. [SwiftyGif](https://github.com/kirualex/SwiftyGif) (can't get working on MacOS) or Lottie or similar
-    - to make it easier to track repeats of gif
-    - to get rid of the horrible webview zoom/scroll bars
+- Bug: right click on menu bar icon only works after first left click
+- ✅ ~~Use a library for animation~~ 
 - ✅ ~~Add launch on login~~ thanks @sindresohus! https://github.com/sindresorhus/LaunchAtLogin
 - ✅ ~~right click opens menu allowing you to quit app entirely~~
 - ✅ ~~reset animation view when clicking off / closing popover~~
@@ -18,6 +17,7 @@ A macOS app to calm your mind
 ## Roadmap
 
 - Set default amount in preferences
+- Underline fill bar to show how many breaths remaining
 - Add automatic updates
 - Choose from range of animations
 - Customise animation / breathing timing
@@ -26,4 +26,5 @@ A macOS app to calm your mind
 - Add contextual reminders (e.g. automatically pop up before a calendar event)
 - Add dark mode
 
+Mockup screens: 
 ![Preview screens](https://i.imgur.com/f2m4LAI.png)
