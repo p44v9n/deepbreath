@@ -1,5 +1,6 @@
 import SwiftUI
 
+
 class PreferencesManager: ObservableObject {
     @AppStorage("defaultCount") var defaultCount: Int = 3
     @AppStorage("checkForUpdates") var checkForUpdates: Bool = false
