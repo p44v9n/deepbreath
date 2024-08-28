@@ -1,5 +1,6 @@
 
 import SwiftUI
+import RiveRuntime
 
 struct PrefsView: View {
     @StateObject private var preferencesManager = PreferencesManager.shared
@@ -21,13 +22,13 @@ struct PrefsView: View {
     private var content: some View {
         switch selectedTab {
         case 0:
-            GeneralView(preferencesManager: preferencesManager)
+            GeneralPrefsView(preferencesManager: preferencesManager)
         case 1:
-            DisplayView(preferencesManager: preferencesManager)
+            DisplayPrefsView(preferencesManager: preferencesManager)
         case 2:
             Text("Reminders Settings")
         case 3:
-            Text("About DeepBreath")
+            AboutPrefsView(preferencesManager: preferencesManager)
         default:
             EmptyView()
         }
@@ -80,8 +81,7 @@ struct TabBarButton: View {
     }
 }
 
-// Assuming these views are defined elsewhere in your project
-struct GeneralView: View {
+struct GeneralPrefsView: View {
     @ObservedObject var preferencesManager: PreferencesManager
     
     var body: some View {
@@ -123,7 +123,7 @@ struct GeneralView: View {
     }
 }
 
-struct DisplayView: View {
+struct DisplayPrefsView: View {
     @ObservedObject var preferencesManager: PreferencesManager
     
     var body: some View {
@@ -132,6 +132,33 @@ struct DisplayView: View {
     }
 }
 
+struct AboutPrefsView: View {
+    @ObservedObject var preferencesManager: PreferencesManager
+    @State private var riveViewModel: RiveViewModel?
+    
+    var body: some View {
+        VStack {
+            if let riveViewModel = riveViewModel {
+                riveViewModel.view()
+                    .frame(width: 100, height: 100)
+            } else {
+                Text("Loading animation...")
+                    .onAppear {
+                        self.riveViewModel = RiveViewModel(fileName: "breathing1")
+                        self.riveViewModel?.play(animationName: "Timeline 1")
+                    }
+            }
+            VStack(spacing: 10, content: {
+                Text("**Deep Breath**").font(.system(size:17))
+                Text("􀪥 Contribute on [GitHub](https://github.com/p44v9n/deepbreath).")
+                Text("􁞵 Donate with [Ko-fi](https://ko-fi.com/p44v9n/).")
+                Text("􀟱 Made by [Paavan](https://paavandesign.com)")
+            })
+        }
+    }
+}
+
 #Preview {
     PrefsView()
 }
+
