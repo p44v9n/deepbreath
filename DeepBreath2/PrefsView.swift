@@ -20,9 +20,9 @@ struct PrefsView: View {
   @ViewBuilder
   private var content: some View {
     switch selectedTab {
-    case 1:
-      GeneralPrefsView(preferencesManager: preferencesManager)
     case 0:
+      GeneralPrefsView(preferencesManager: preferencesManager)
+    case 1:
       DisplayPrefsView(preferencesManager: preferencesManager)
     case 2:
       Text("Reminders are coming soon")
