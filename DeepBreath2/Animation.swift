@@ -11,10 +11,11 @@ import SwiftUI
 
 struct AnimationView: View {
   @Binding var count: Int
-  @Binding var isAnimating: Bool  // Add this line
+  @Binding var isAnimating: Bool
   var onComplete: () -> Void
   @State private var riveViewModel: RiveViewModel?
   @State private var animationWorkItem: DispatchWorkItem?
+  @ObservedObject private var prefsManager = PreferencesManager.shared
 
   // Adjust this value to match your animation's duration
   private let animationDuration: Double = 6.5  // in seconds
@@ -29,16 +30,36 @@ struct AnimationView: View {
       } else {
         Text("Loading animation...")
           .onAppear {
-            self.riveViewModel = RiveViewModel(fileName: "breathing1")
+            loadAnimation()
           }
       }
-      Text("Remaining breaths: \(count)")
+      if prefsManager.showBreathCount {
+        Text("Remaining breaths: \(count)")
+      }
     }
     .onChange(of: isAnimating) { newValue in
       if !newValue {
         stopAnimation()
       }
     }
+    .onChange(of: prefsManager.animationStyle) { _ in
+      loadAnimation()
+    }
+  }
+
+  private func loadAnimation() {
+    let fileName: String
+    switch prefsManager.animationStyle {
+    case 1:
+      fileName = "breathing1"
+    case 2:
+      fileName = "breathing2"
+    case 3:
+      fileName = "breathing3"
+    default:
+      fileName = "breathing1"
+    }
+    self.riveViewModel = RiveViewModel(fileName: fileName)
   }
 
   private func startAnimation() {

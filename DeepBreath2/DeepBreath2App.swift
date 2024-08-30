@@ -14,7 +14,7 @@ struct DeepBreath2App: App {
     MenuBarExtra {
       ContentView()
     } label: {
-      Image("Icon")
+        Text("Deep Breath")
     }
     .menuBarExtraStyle(.window)
     .commands {
