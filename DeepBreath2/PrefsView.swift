@@ -1,5 +1,6 @@
 import RiveRuntime
 import SwiftUI
+import LaunchAtLogin
 
 struct PrefsView: View {
   @StateObject private var preferencesManager = PreferencesManager.shared
@@ -87,12 +88,9 @@ struct GeneralPrefsView: View {
       alignment: .leading, spacing: 15,
       content: {
 
-        Toggle(
-          isOn: .constant(false),
-          label: {
-            Text("Open DeepBreath at Login")
-          }
-        ).disabled(true)
+          LaunchAtLogin.Toggle()
+
+
         HStack(
           alignment: .firstTextBaseline, spacing: 10,
           content: {

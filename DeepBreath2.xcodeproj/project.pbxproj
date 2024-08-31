@@ -26,6 +26,7 @@
 		DF0ECF622C7C7DF100B768DE /* DeepBreath2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0ECF612C7C7DF100B768DE /* DeepBreath2UITests.swift */; };
 		DF0ECF642C7C7DF100B768DE /* DeepBreath2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0ECF632C7C7DF100B768DE /* DeepBreath2UITestsLaunchTests.swift */; };
 		DF1BE9682C8286FD00867408 /* breathing1.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF1BE9672C8286FD00867408 /* breathing1.riv */; };
+		DF1BE96B2C831F9F00867408 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = DF1BE96A2C831F9F00867408 /* LaunchAtLogin */; };
 		DF28518A2C7F8D7E00D2EC58 /* PrefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2851892C7F8D7E00D2EC58 /* PrefsView.swift */; };
 		DF28518E2C81D3B900D2EC58 /* breathing2.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF28518D2C81D3B900D2EC58 /* breathing2.riv */; };
 		DF2851902C81FC0100D2EC58 /* breathing3.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF28518F2C81FC0100D2EC58 /* breathing3.riv */; };
@@ -85,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1BE96B2C831F9F00867408 /* LaunchAtLogin in Frameworks */,
 				DF4085172C7E38630027870C /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +199,7 @@
 			name = DeepBreath2;
 			packageProductDependencies = (
 				DF4085162C7E38630027870C /* RiveRuntime */,
+				DF1BE96A2C831F9F00867408 /* LaunchAtLogin */,
 			);
 			productName = DeepBreath2;
 			productReference = DF0ECF422C7C7DF000B768DE /* DeepBreath2.app */;
@@ -272,6 +275,7 @@
 			mainGroup = DF0ECF392C7C7DF000B768DE;
 			packageReferences = (
 				DF4085152C7E38630027870C /* XCRemoteSwiftPackageReference "rive-ios" */,
+				DF1BE9692C831F0C00867408 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = DF0ECF432C7C7DF000B768DE /* Products */;
 			projectDirPath = "";
@@ -655,6 +659,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DF1BE9692C831F0C00867408 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		DF4085152C7E38630027870C /* XCRemoteSwiftPackageReference "rive-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rive-app/rive-ios";
@@ -666,6 +678,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DF1BE96A2C831F9F00867408 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF1BE9692C831F0C00867408 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
+		};
 		DF4085162C7E38630027870C /* RiveRuntime */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DF4085152C7E38630027870C /* XCRemoteSwiftPackageReference "rive-ios" */;

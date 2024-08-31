@@ -1,13 +1,22 @@
 {
-  "originHash" : "0ed1a20ef167ff6bbd7e233d8316ce8089f144b9619fb921d55eb1b69ffdfd4c",
+  "originHash" : "146cfd7ad7cf97721e8a3d27fb45f1e2f8710ce25a6e1367c351d701fc131566",
   "pins" : [
+    {
+      "identity" : "launchatlogin-modern",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/LaunchAtLogin-Modern",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a04ec1c363be3627734f6dad757d82f5d4fa8fcc"
+      }
+    },
     {
       "identity" : "rive-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rive-app/rive-ios",
       "state" : {
-        "revision" : "41fee1cde4519cc0a2eb784950ddf423e7d79eb1",
-        "version" : "6.0.5"
+        "revision" : "585e092bc0326a9b3003ab62c5f6303bb70214db",
+        "version" : "6.0.7"
       }
     }
   ],
