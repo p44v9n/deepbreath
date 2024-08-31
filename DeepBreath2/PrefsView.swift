@@ -106,11 +106,10 @@ struct GeneralPrefsView: View {
           }
         )
         Divider().frame(width: 440)
-        Picker("Default amount:", selection: $preferencesManager.defaultCount) {
-          Text("3 breaths").tag(3)
-          Text("5 breaths").tag(5)
-          Text("10 breaths").tag(10)
-          Text("15 breaths").tag(15)
+        Picker("Default time:", selection: $preferencesManager.defaultDurationInSeconds) {
+          Text("20 seconds").tag(20)
+          Text("1 minute").tag(60)
+          Text("3 minutes").tag(180)
         }.frame(width: 200)
 
         VStack(
@@ -164,7 +163,7 @@ struct DisplayPrefsView: View {
       Picker("Animation:", selection: $preferencesManager.animationStyle) {
         Text("Circles").tag(1)
         Text("Triangles").tag(2)
-        Text("Rings").tag(3)
+        //        Text("Rings").tag(3)
       }.frame(width: 200)
 
       HStack(alignment: .top, spacing: 20) {
@@ -199,15 +198,15 @@ struct DisplayPrefsView: View {
         alignment: .leading, spacing: 5,
         content: {
           Toggle(
-            isOn: .constant(false),
+            isOn: $preferencesManager.showBreathCount,
             label: {
               Text("Show how many breaths you have remaining")
             }
-          ).disabled(true)
-          Text("Display a progress line underneath the animation to show how much longer you have.")
-            .font(.system(size: 11)).foregroundStyle(Color.gray).fixedSize(
-              horizontal: false, vertical: true
-            ).frame(width: 420, alignment: .leading)
+          )
+          //          Text("Display a progress line underneath the animation to show how much longer you have.")
+          //            .font(.system(size: 11)).foregroundStyle(Color.gray).fixedSize(
+          //              horizontal: false, vertical: true)
+          .frame(width: 420, alignment: .leading)
         })
 
     }

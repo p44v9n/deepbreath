@@ -2,16 +2,16 @@ import SwiftUI
 
 struct ContentView: View {
   @ObservedObject private var preferencesManager = PreferencesManager.shared
-  @State private var breathCount: Int
   @State private var preferencesWindowController: PreferencesWindowController?
-  @State private var count: Int
+  @State private var durationInSeconds: Int
   @State private var animationVisible = false
   @Environment(\.presentationMode) var presentationMode  // Add this line
   @State private var showMenu = false
+  @State private var timer: Timer?
 
   init() {
-    _breathCount = State(initialValue: PreferencesManager.shared.defaultCount)
-    _count = State(initialValue: PreferencesManager.shared.defaultCount)
+    _durationInSeconds = State(initialValue: PreferencesManager.shared.defaultDurationInSeconds)
+    _animationVisible = State(initialValue: false)
   }
 
   var body: some View {
@@ -19,18 +19,21 @@ struct ContentView: View {
     if !animationVisible {
       VStack {
         HStack {
-          Picker("How many breaths:", selection: $count) {
-            //                    Text("1 breath").tag(1) // for debugging — comment out
-            Text("3 breaths").tag(3)
-            Text("5 breaths").tag(5)
-            Text("10 breaths").tag(10)
-            Text("15 breaths").tag(15)
+          Picker("How long:", selection: $durationInSeconds) {
+            Text("20 seconds").tag(20)
+            Text("1 minute").tag(60)
+            Text("3 minutes").tag(180)
           }
           .frame(maxWidth: 120)
           .labelsHidden()
 
           Button("􀊄 Start") {
             animationVisible.toggle()
+            if animationVisible {
+              startTimer()
+            } else {
+              timer?.invalidate()
+            }
           }
           .accentColor(.blue)
           Button("􀍠") {
@@ -53,7 +56,15 @@ struct ContentView: View {
       }.padding(10)
     } else {
       ZStack(alignment: .topLeading) {
-        AnimationView(count: $count, isAnimating: $animationVisible, onComplete: closePopover)
+        VStack {
+          AnimationView(
+            count: $durationInSeconds, isAnimating: $animationVisible, onComplete: closePopover)
+
+          // rough estimate of remaining breaths
+          if PreferencesManager.shared.showBreathCount {
+            Text("Remaining breaths: \(Int(ceil(Double(durationInSeconds) / 6.0)))")
+          }
+        }
 
         // Close button
         Button {
@@ -66,8 +77,8 @@ struct ContentView: View {
         .padding(10)
       }
       .frame(
-        minWidth: 250,
-        minHeight: 250
+        width: sizeForPopover().width,
+        height: sizeForPopover().height
       )
       .padding(10)
     }
@@ -82,11 +93,33 @@ struct ContentView: View {
 
   private func closePopover() {
     animationVisible = false  // This will trigger the animation to stop
-    count = PreferencesManager.shared.defaultCount  // Reset count to default
+    durationInSeconds = PreferencesManager.shared.defaultDurationInSeconds  // Reset count to default
     self.presentationMode.wrappedValue.dismiss()
+    timer?.invalidate()  // Invalidate the timer when closing manually
+  }
+
+  private func startTimer() {
+    timer?.invalidate()  // Invalidate any existing timer
+    timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(durationInSeconds), repeats: false)
+    { _ in
+      closePopover()
+    }
+  }
+
+  private func sizeForPopover() -> (width: CGFloat, height: CGFloat) {
+    switch preferencesManager.popoverSize {
+    case "sm":
+      return (width: 250, height: 250)
+    case "md":
+      return (width: 300, height: 300)
+    case "lg":
+      return (width: 350, height: 350)
+    default:
+      return (width: 250, height: 250)
+    }
   }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }

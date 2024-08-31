@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DF0212CC2C7C855F007823BF /* PopoverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0212CA2C7C855C007823BF /* PopoverManager.swift */; };
-		DF0212CE2C7C8568007823BF /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0212CD2C7C8568007823BF /* PopoverView.swift */; };
 		DF0212D42C7C85B1007823BF /* PrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0212D32C7C85B1007823BF /* PrefsManager.swift */; };
 		DF0212D72C7C8637007823BF /* IconLightMode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DF0212D52C7C8637007823BF /* IconLightMode.pdf */; };
 		DF0212D82C7C8637007823BF /* IconDarkMode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DF0212D62C7C8637007823BF /* IconDarkMode.pdf */; };
@@ -26,12 +25,12 @@
 		DF0ECF582C7C7DF100B768DE /* DeepBreath2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0ECF572C7C7DF100B768DE /* DeepBreath2Tests.swift */; };
 		DF0ECF622C7C7DF100B768DE /* DeepBreath2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0ECF612C7C7DF100B768DE /* DeepBreath2UITests.swift */; };
 		DF0ECF642C7C7DF100B768DE /* DeepBreath2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0ECF632C7C7DF100B768DE /* DeepBreath2UITestsLaunchTests.swift */; };
+		DF1BE9682C8286FD00867408 /* breathing1.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF1BE9672C8286FD00867408 /* breathing1.riv */; };
 		DF28518A2C7F8D7E00D2EC58 /* PrefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2851892C7F8D7E00D2EC58 /* PrefsView.swift */; };
 		DF28518E2C81D3B900D2EC58 /* breathing2.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF28518D2C81D3B900D2EC58 /* breathing2.riv */; };
 		DF2851902C81FC0100D2EC58 /* breathing3.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF28518F2C81FC0100D2EC58 /* breathing3.riv */; };
 		DF4085142C7E37D80027870C /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4085132C7E37D80027870C /* Animation.swift */; };
 		DF4085172C7E38630027870C /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = DF4085162C7E38630027870C /* RiveRuntime */; };
-		DF4085192C7E3C3F0027870C /* breathing1.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF4085182C7E3B610027870C /* breathing1.riv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +52,6 @@
 
 /* Begin PBXFileReference section */
 		DF0212CA2C7C855C007823BF /* PopoverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverManager.swift; sourceTree = "<group>"; };
-		DF0212CD2C7C8568007823BF /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		DF0212D32C7C85B1007823BF /* PrefsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsManager.swift; sourceTree = "<group>"; };
 		DF0212D52C7C8637007823BF /* IconLightMode.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = IconLightMode.pdf; sourceTree = SOURCE_ROOT; };
 		DF0212D62C7C8637007823BF /* IconDarkMode.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = IconDarkMode.pdf; sourceTree = SOURCE_ROOT; };
@@ -75,11 +73,11 @@
 		DF0ECF5D2C7C7DF100B768DE /* DeepBreath2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepBreath2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0ECF612C7C7DF100B768DE /* DeepBreath2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepBreath2UITests.swift; sourceTree = "<group>"; };
 		DF0ECF632C7C7DF100B768DE /* DeepBreath2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepBreath2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DF1BE9672C8286FD00867408 /* breathing1.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = breathing1.riv; sourceTree = "<group>"; };
 		DF2851892C7F8D7E00D2EC58 /* PrefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsView.swift; sourceTree = "<group>"; };
 		DF28518D2C81D3B900D2EC58 /* breathing2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = breathing2.riv; sourceTree = "<group>"; };
 		DF28518F2C81FC0100D2EC58 /* breathing3.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = breathing3.riv; sourceTree = "<group>"; };
 		DF4085132C7E37D80027870C /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		DF4085182C7E3B610027870C /* breathing1.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = breathing1.riv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,13 +137,12 @@
 		DF0ECF442C7C7DF000B768DE /* DeepBreath2 */ = {
 			isa = PBXGroup;
 			children = (
+				DF1BE9672C8286FD00867408 /* breathing1.riv */,
 				DF0212CA2C7C855C007823BF /* PopoverManager.swift */,
 				DF0212D32C7C85B1007823BF /* PrefsManager.swift */,
-				DF0212CD2C7C8568007823BF /* PopoverView.swift */,
 				DF0ECF452C7C7DF000B768DE /* DeepBreath2App.swift */,
 				DF0212D92C7C9EF6007823BF /* PreferencesWindowController.swift */,
 				DF0ECF472C7C7DF000B768DE /* ContentView.swift */,
-				DF4085182C7E3B610027870C /* breathing1.riv */,
 				DF28518F2C81FC0100D2EC58 /* breathing3.riv */,
 				DF28518D2C81D3B900D2EC58 /* breathing2.riv */,
 				DF0ECF492C7C7DF100B768DE /* Assets.xcassets */,
@@ -294,11 +291,11 @@
 			files = (
 				DF0212D82C7C8637007823BF /* IconDarkMode.pdf in Resources */,
 				DF0ECF4D2C7C7DF100B768DE /* Preview Assets.xcassets in Resources */,
+				DF1BE9682C8286FD00867408 /* breathing1.riv in Resources */,
 				DF02130A2C7E0DAF007823BF /* Prefs 4.png in Resources */,
 				DF0ECF4A2C7C7DF100B768DE /* Assets.xcassets in Resources */,
 				DF0213032C7E0DA8007823BF /* Menu Bar 1.png in Resources */,
 				DF0213092C7E0DAF007823BF /* Prefs 2.png in Resources */,
-				DF4085192C7E3C3F0027870C /* breathing1.riv in Resources */,
 				DF2851902C81FC0100D2EC58 /* breathing3.riv in Resources */,
 				DF02130B2C7E0DAF007823BF /* Prefs 1.png in Resources */,
 				DF02130C2C7E0DAF007823BF /* Prefs 3.png in Resources */,
@@ -332,7 +329,6 @@
 				DF0ECF482C7C7DF000B768DE /* ContentView.swift in Sources */,
 				DF0212CC2C7C855F007823BF /* PopoverManager.swift in Sources */,
 				DF28518A2C7F8D7E00D2EC58 /* PrefsView.swift in Sources */,
-				DF0212CE2C7C8568007823BF /* PopoverView.swift in Sources */,
 				DF0ECF462C7C7DF000B768DE /* DeepBreath2App.swift in Sources */,
 				DF0212DA2C7C9EF6007823BF /* PreferencesWindowController.swift in Sources */,
 				DF4085142C7E37D80027870C /* Animation.swift in Sources */,
