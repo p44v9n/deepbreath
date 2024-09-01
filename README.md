@@ -2,6 +2,8 @@
 A macOS app to calm your mind
 [https://deepbreath.ju.mp/](https://deepbreath.ju.mp/)
 
+![Screenshot](https://i.imgur.com/AaJm62w.png)
+
 ## Todo
 
 - Hide dock icon
