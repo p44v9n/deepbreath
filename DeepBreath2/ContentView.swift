@@ -3,85 +3,129 @@ import SwiftUI
 struct ContentView: View {
   @ObservedObject private var preferencesManager = PreferencesManager.shared
   @State private var preferencesWindowController: PreferencesWindowController?
-  @State private var durationInSeconds: Int
+  @State private var duration: (name: String, value: Int)
   @State private var animationVisible = false
-  @Environment(\.presentationMode) var presentationMode  // Add this line
+  @Environment(\.presentationMode) var presentationMode
   @State private var showMenu = false
   @State private var timer: Timer?
+  @State private var shadeWindow: ShadeWindow?
 
   init() {
-    _durationInSeconds = State(initialValue: PreferencesManager.shared.defaultDurationInSeconds)
+    let prefs = PreferencesManager.shared
+    _duration = State(
+      initialValue: (name: prefs.defaultDurationName, value: prefs.defaultDurationValue))
     _animationVisible = State(initialValue: false)
   }
 
   var body: some View {
-
-    if !animationVisible {
-      VStack {
-        HStack {
-          Picker("How long:", selection: $durationInSeconds) {
-            Text("20 seconds").tag(20)
-            Text("1 minute").tag(60)
-            Text("3 minutes").tag(180)
-          }
-          .frame(maxWidth: 120)
-          .labelsHidden()
-
-          Button("􀊄 Start") {
-            animationVisible.toggle()
-            if animationVisible {
-              startTimer()
-            } else {
-              timer?.invalidate()
-            }
-          }
-          .accentColor(.blue)
-          Button("􀍠") {
-            showMenu.toggle()
-          }
-          .accentColor(.white)
-        }
-        .clipped()
-
-        if showMenu {
-          HStack {
-            Button("􀣌 Preferences") {
-              showPreferences()
-            }
-            Button("􀁡 Quit") {
-              NSApplication.shared.terminate(nil)
-            }
-          }
-        }
-      }.padding(10)
-    } else {
-      ZStack(alignment: .topLeading) {
-        VStack {
-          AnimationView(
-            count: $durationInSeconds, isAnimating: $animationVisible, onComplete: closePopover)
-
-          // rough estimate of remaining breaths
-          if PreferencesManager.shared.showBreathCount {
-            Text("Remaining breaths: \(Int(ceil(Double(durationInSeconds) / 6.0)))")
-          }
-        }
-
-        // Close button
-        Button {
-          closePopover()
-        } label: {
-          Image(systemName: "xmark.circle.fill")
-            .foregroundColor(Color(.lightGray))
-        }
-        .buttonStyle(PlainButtonStyle())
-        .padding(10)
+    Group {
+      if !animationVisible {
+        mainView
+      } else {
+        animationView
       }
-      .frame(
-        width: sizeForPopover().width,
-        height: sizeForPopover().height
-      )
-      .padding(10)
     }
+  }
+
+  private var mainView: some View {
+    VStack {
+      HStack {
+        durationPicker
+        startButton
+        menuButton
+      }
+      .clipped()
+
+      if showMenu {
+        menuOptions
+      }
+    }.padding(10)
+  }
+
+  private var durationPicker: some View {
+    Picker("How long:", selection: $duration.value) {
+      Text("20 seconds").tag(20)
+      Text("1 minute").tag(60)
+      Text("3 minutes").tag(180)
+    }
+    .frame(maxWidth: 120)
+    .labelsHidden()
+    .onChange(of: duration.value) { newValue in
+      duration.name = durationName(for: newValue)
+    }
+  }
+
+  private var startButton: some View {
+    Button("􀊄 Start") {
+      if !animationVisible {
+        showShadeWindow()
+        animationVisible = true
+        startTimer()
+      } else {
+        stopAnimation()
+      }
+    }
+    .accentColor(.blue)
+  }
+
+  private func stopAnimation() {
+    shadeWindow?.fadeOut {
+      self.animationVisible = false
+      self.timer?.invalidate()
+    }
+  }
+
+  private var menuButton: some View {
+    Button("􀍠") {
+      showMenu.toggle()
+    }
+    .accentColor(.white)
+  }
+
+  private var menuOptions: some View {
+    HStack {
+      Button("􀣌 Preferences") {
+        showPreferences()
+      }
+      Button("􀁡 Quit") {
+        NSApplication.shared.terminate(nil)
+      }
+    }
+  }
+
+  private var animationView: some View {
+    ZStack(alignment: .topLeading) {
+      VStack {
+        AnimationView(
+          count: $duration.value,
+          duration: $duration,
+          isAnimating: $animationVisible,
+          onComplete: closePopover
+        )
+
+        if PreferencesManager.shared.showBreathCount {
+          Text("Remaining breaths: \(Int(ceil(Double(duration.value) / 6.0)))")
+        }
+      }
+
+      closeButton
+    }
+    .frame(
+      width: sizeForPopover().width,
+      height: sizeForPopover().height
+    )
+    .padding(10)
+  }
+
+  private var closeButton: some View {
+    Button {
+      closePopover()
+    } label: {
+      Image(systemName: "xmark.circle.fill")
+        .foregroundColor(Color(.lightGray))
+    }
+    .buttonStyle(PlainButtonStyle())
+    .padding(10)
   }
 
   private func showPreferences() {
@@ -92,16 +136,17 @@ struct ContentView: View {
   }
 
   private func closePopover() {
-    animationVisible = false  // This will trigger the animation to stop
-    durationInSeconds = PreferencesManager.shared.defaultDurationInSeconds  // Reset count to default
+    stopAnimation()
+    duration = (
+      name: preferencesManager.defaultDurationName, value: preferencesManager.defaultDurationValue
+    )
     self.presentationMode.wrappedValue.dismiss()
-    timer?.invalidate()  // Invalidate the timer when closing manually
   }
 
   private func startTimer() {
-    timer?.invalidate()  // Invalidate any existing timer
-    timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(durationInSeconds), repeats: false)
-    { _ in
+    timer?.invalidate()
+    timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(duration.value), repeats: false) {
+      _ in
       closePopover()
     }
   }
@@ -118,6 +163,23 @@ struct ContentView: View {
       return (width: 250, height: 250)
     }
   }
+
+  private func durationName(for value: Int) -> String {
+    switch value {
+    case 20: return "Short"
+    case 60: return "Medium"
+    case 180: return "Long"
+    default: return "Custom"
+    }
+  }
+
+  private func showShadeWindow() {
+    if shadeWindow == nil {
+      shadeWindow = ShadeWindow(onShadeClick: stopAnimation)
+    }
+    shadeWindow?.fadeIn()
+  }
+
 }
 
 #Preview {

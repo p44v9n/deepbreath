@@ -1,6 +1,6 @@
+import LaunchAtLogin
 import RiveRuntime
 import SwiftUI
-import LaunchAtLogin
 
 struct PrefsView: View {
   @StateObject private var preferencesManager = PreferencesManager.shared
@@ -26,7 +26,7 @@ struct PrefsView: View {
     case 1:
       DisplayPrefsView(preferencesManager: preferencesManager)
     case 2:
-      Text("Reminders are coming soon")
+      Text("Reminders are coming soon!")
     case 3:
       AboutPrefsView(preferencesManager: preferencesManager)
     default:
@@ -88,8 +88,7 @@ struct GeneralPrefsView: View {
       alignment: .leading, spacing: 15,
       content: {
 
-          LaunchAtLogin.Toggle()
-
+        LaunchAtLogin.Toggle()
 
         HStack(
           alignment: .firstTextBaseline, spacing: 10,
@@ -104,11 +103,11 @@ struct GeneralPrefsView: View {
           }
         )
         Divider().frame(width: 440)
-        Picker("Default time:", selection: $preferencesManager.defaultDurationInSeconds) {
-          Text("20 seconds").tag(20)
-          Text("1 minute").tag(60)
-          Text("3 minutes").tag(180)
-        }.frame(width: 200)
+        // Picker("Default time:", selection: $preferencesManager.defaultDuration) {
+        //   Text("20 seconds").tag(["Short", 20])
+        //   Text("1 minute").tag(["Medium", 60])
+        //   Text("3 minutes").tag(["Long", 180])
+        // }.frame(width: 200)
 
         VStack(
           alignment: .leading, spacing: 5,
@@ -159,7 +158,7 @@ struct DisplayPrefsView: View {
       }.frame(width: 200)
 
       Picker("Animation:", selection: $preferencesManager.animationStyle) {
-        Text("Circles").tag(1)
+        Text("Text").tag(1)
         Text("Triangles").tag(2)
         //        Text("Rings").tag(3)
       }.frame(width: 200)
@@ -171,8 +170,8 @@ struct DisplayPrefsView: View {
           riveViewModel.view()
             .frame(width: 100, height: 100)
             .background(Color.gray.opacity(0.2))
-            .cornerRadius(15)
-            .id(animationUpdateTrigger)  // Add this line
+            .cornerRadius(10)
+            .id(animationUpdateTrigger)
         } else {
           Text("Loading animation...")
         }
@@ -205,6 +204,21 @@ struct DisplayPrefsView: View {
           //            .font(.system(size: 11)).foregroundStyle(Color.gray).fixedSize(
           //              horizontal: false, vertical: true)
           .frame(width: 420, alignment: .leading)
+          .disabled(true)
+
+        })
+      VStack(
+        alignment: .leading, spacing: 5,
+        content: {
+          Toggle(
+            isOn: $preferencesManager.showBreathCount,
+            label: {
+              Text("Blackout the rest of the screen")
+            }
+          )
+          .frame(width: 420, alignment: .leading)
+          .disabled(true)
+
         })
 
     }
@@ -229,7 +243,7 @@ struct DisplayPrefsView: View {
       fileName = "breathing1"
     }
     self.riveViewModel = RiveViewModel(fileName: fileName)
-    self.riveViewModel?.play(animationName: "Timeline 1")
+    self.riveViewModel?.play(animationName: "6 seconds")
     animationUpdateTrigger.toggle()  // Add this line
   }
 }
@@ -239,26 +253,31 @@ struct AboutPrefsView: View {
   @State private var riveViewModel: RiveViewModel?
 
   var body: some View {
-    VStack {
+    VStack(content: {
+
       if let riveViewModel = riveViewModel {
         riveViewModel.view()
           .frame(width: 100, height: 100)
+          .cornerRadius(10)
+
       } else {
         Text("Loading animation...")
           .onAppear {
             self.riveViewModel = RiveViewModel(fileName: "breathing1")
-            self.riveViewModel?.play(animationName: "Timeline 1")
+            self.riveViewModel?.play(animationName: "6 seconds")
           }
       }
-      VStack(
-        spacing: 10,
-        content: {
-          Text("**Deep Breath**").font(.system(size: 17))
-          Text("􀪥 Contribute on [GitHub](https://github.com/p44v9n/deepbreath).")
-          Text("􁞵 Donate with [Ko-fi](https://ko-fi.com/p44v9n/).")
-          Text("􀟱 Made by [Paavan](https://paavandesign.com)")
-        })
-    }
+    }).padding(.top, 15).padding(.bottom, 25)
+
+    VStack(
+      spacing: 15,
+
+      content: {
+        Text("**Deep Breath**").font(.system(size: 17))
+        Text("􀪥 Contribute on [GitHub](https://github.com/p44v9n/deepbreath).")
+        Text("􁞵 Donate with [Ko-fi](https://ko-fi.com/p44v9n/).")
+        Text("􀟱 Made by [Paavan](https://paavandesign.com)")
+      })
   }
 }
 

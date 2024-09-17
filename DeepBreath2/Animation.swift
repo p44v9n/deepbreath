@@ -4,6 +4,7 @@ import SwiftUI
 
 struct AnimationView: View {
   @Binding var count: Int
+  @Binding var duration: (name: String, value: Int)
   @Binding var isAnimating: Bool
   var onComplete: () -> Void
   @State private var rive: RiveViewModel?
@@ -19,7 +20,6 @@ struct AnimationView: View {
             loadAnimation()
           }
       }
-
     }
 
     .onChange(of: prefsManager.animationStyle) { oldValue, newValue in
@@ -39,9 +39,8 @@ struct AnimationView: View {
     default:
       fileName = "breathing1"
     }
-    self.rive = RiveViewModel(fileName: fileName, stateMachineName: "State Machine 1")
+    self.rive = RiveViewModel(fileName: fileName, stateMachineName: duration.name)
 
   }
 
 }
-

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "LightMode.svg",
+      "filename" : "DarkMode.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "LightMode 1.svg",
+      "filename" : "DarkMode 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "LightMode 2.svg",
+      "filename" : "DarkMode 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
