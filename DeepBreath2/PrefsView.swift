@@ -26,7 +26,7 @@ struct PrefsView: View {
     case 1:
       DisplayPrefsView(preferencesManager: preferencesManager)
     case 2:
-      Text("Reminders are coming soon!")
+      ReminderPrefsView(preferencesManager: preferencesManager)
     case 3:
       AboutPrefsView(preferencesManager: preferencesManager)
     default:
@@ -278,6 +278,36 @@ struct AboutPrefsView: View {
         Text("􁞵 Donate with [Ko-fi](https://ko-fi.com/p44v9n/).")
         Text("􀟱 Made by [Paavan](https://paavandesign.com)")
       })
+  }
+}
+
+struct ReminderPrefsView: View {
+  @ObservedObject var preferencesManager: PreferencesManager
+
+  var body: some View {
+    VStack(alignment: .leading, spacing: 15) {
+      Toggle("Enable hourly reminders", isOn: $preferencesManager.enableHourlyReminders)
+
+      if preferencesManager.enableHourlyReminders {
+        Picker("Remind me at", selection: $preferencesManager.reminderMinute) {
+          Text("On the hour").tag(0)
+          Text("15 minutes past").tag(15)
+          Text("30 minutes past").tag(30)
+          Text("45 minutes past").tag(45)
+        }
+        .pickerStyle(MenuPickerStyle())
+        .frame(width: 200)
+      }
+
+      Text(
+        "The reminder will show the breathing exercise window at the selected time every hour while your computer is awake."
+      )
+      .font(.caption)
+      .foregroundColor(.gray)
+      .fixedSize(horizontal: false, vertical: true)
+      .frame(width: 400, alignment: .leading)
+    }
+    .padding()
   }
 }
 

@@ -5,6 +5,9 @@ class PopoverManager: ObservableObject {
   private var statusItem: NSStatusItem?
   private var popover: NSPopover
   private var shadeWindow: ShadeWindow?
+  private var reminderTimer: Timer?
+
+  @ObservedObject private var preferencesManager = PreferencesManager.shared
 
   init() {
     popover = NSPopover()
@@ -14,6 +17,11 @@ class PopoverManager: ObservableObject {
     popover.contentViewController = NSHostingController(rootView: contentView)
 
     createStatusBarItem()
+    setupReminderTimer()
+
+    NotificationCenter.default.addObserver(
+      self, selector: #selector(reminderSettingsChanged), name: .reminderSettingsChanged,
+      object: nil)
   }
 
   private func createStatusBarItem() {
@@ -38,4 +46,46 @@ class PopoverManager: ObservableObject {
     }
   }
 
+  private func setupReminderTimer() {
+    reminderTimer?.invalidate()
+
+    guard preferencesManager.enableHourlyReminders else { return }
+
+    let calendar = Calendar.current
+    let now = Date()
+    let components = calendar.dateComponents([.minute, .second], from: now)
+
+    let secondsUntilNextHour = (60 - components.minute!) * 60 - components.second!
+    let secondsUntilReminder =
+      (preferencesManager.reminderMinute * 60 - components.minute! * 60 - components.second! + 3600)
+      % 3600
+
+    let delay = Double(min(secondsUntilNextHour, secondsUntilReminder))
+
+    reminderTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { [weak self] _ in
+      self?.showReminder()
+      self?.setupHourlyReminderTimer()
+    }
+  }
+
+  private func setupHourlyReminderTimer() {
+    reminderTimer = Timer.scheduledTimer(withTimeInterval: 3600, repeats: true) { [weak self] _ in
+      self?.showReminder()
+    }
+  }
+
+  private func showReminder() {
+    if let button = statusItem?.button {
+      popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
+    }
+  }
+
+  @objc private func reminderSettingsChanged() {
+    setupReminderTimer()
+  }
+
+  // Add this method to update the reminder timer when preferences change
+  func updateReminderSettings() {
+    setupReminderTimer()
+  }
 }

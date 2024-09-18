@@ -23,7 +23,22 @@ class PreferencesManager: ObservableObject {
   @AppStorage("timeBreatheHold") var timeBreatheHold: Int = 5
   @AppStorage("timeBreatheOut") var timeBreatheOut: Int = 5
 
+  @AppStorage("enableHourlyReminders") var enableHourlyReminders: Bool = false {
+    didSet {
+      NotificationCenter.default.post(name: .reminderSettingsChanged, object: nil)
+    }
+  }
+  @AppStorage("reminderMinute") var reminderMinute: Int = 0 {
+    didSet {
+      NotificationCenter.default.post(name: .reminderSettingsChanged, object: nil)
+    }
+  }
+
   static let shared = PreferencesManager()
 
   private init() {}
+}
+
+extension Notification.Name {
+  static let reminderSettingsChanged = Notification.Name("reminderSettingsChanged")
 }
