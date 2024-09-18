@@ -12,6 +12,7 @@ A macOS app to calm your mind
 ## Todo
 
 - Choose from range of animations
+- Use enter key to start animation when popover is open / focussed
 
 - ✅ ~~Hide dock icon~~
 - ✅ ~~Add user-configurable global hotkey https://github.com/sindresorhus/KeyboardShortcuts~~
