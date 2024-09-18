@@ -34,7 +34,7 @@ class ShadeWindow: NSWindow {
     // Ensure the window stays on top and covers the entire screen
     self.setFrame(frame, display: true)
 
-    // Set up a custom content view to handle mouse events
+    // Pass the onShadeClick closure to ShadeContentView
     self.contentView = ShadeContentView(onDismiss: { [weak self] in
       self?.onShadeClick?()
     })

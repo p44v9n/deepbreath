@@ -9,6 +9,7 @@ struct ContentView: View {
   @State private var showMenu = false
   @State private var timer: Timer?
   @State private var shadeWindow: ShadeWindow?
+  var onCloseShade: (() -> Void)?
 
   init() {
     let prefs = PreferencesManager.shared
@@ -50,7 +51,7 @@ struct ContentView: View {
     }
     .frame(maxWidth: 120)
     .labelsHidden()
-    .onChange(of: duration.value) { newValue in
+    .onChange(of: duration.value) { oldValue, newValue in
       duration.name = durationName(for: newValue)
     }
   }
@@ -72,6 +73,7 @@ struct ContentView: View {
     shadeWindow?.fadeOut {
       self.animationVisible = false
       self.timer?.invalidate()
+      self.onCloseShade?()  // Call the closure when animation stops
     }
   }
 
@@ -122,10 +124,12 @@ struct ContentView: View {
       closePopover()
     } label: {
       Image(systemName: "xmark.circle.fill")
-        .foregroundColor(Color(.lightGray))
+        .foregroundColor(Color(.darkGray))
+        .imageScale(.large)
     }
     .buttonStyle(PlainButtonStyle())
     .padding(10)
+
   }
 
   private func showPreferences() {
@@ -179,7 +183,6 @@ struct ContentView: View {
     }
     shadeWindow?.fadeIn()
   }
-
 }
 
 #Preview {
