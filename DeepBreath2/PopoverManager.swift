@@ -34,7 +34,7 @@ class PopoverManager: ObservableObject {
     }
   }
 
-  @objc private func togglePopover(_ sender: AnyObject?) {
+  @objc public func togglePopover(_ sender: AnyObject?) {
     if let button = statusItem?.button {
       if popover.isShown {
         // this line is not working

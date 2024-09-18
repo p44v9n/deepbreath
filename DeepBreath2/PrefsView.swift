@@ -1,6 +1,7 @@
 import LaunchAtLogin
 import RiveRuntime
 import SwiftUI
+import KeyboardShortcuts
 
 struct PrefsView: View {
   @StateObject private var preferencesManager = PreferencesManager.shared
@@ -102,6 +103,11 @@ struct GeneralPrefsView: View {
             Button("Check now...") {}.disabled(true)
           }
         )
+          
+          Form {
+                      KeyboardShortcuts.Recorder("Use global hotkey:", name: .togglePopover)
+                  }
+          
         Divider().frame(width: 440)
         // Picker("Default time:", selection: $preferencesManager.defaultDuration) {
         //   Text("20 seconds").tag(["Short", 20])
@@ -300,12 +306,11 @@ struct ReminderPrefsView: View {
       }
 
       Text(
-        "The reminder will show the breathing exercise window at the selected time every hour while your computer is awake."
+        "This will show the breathing exercise window at the selected time every hour while your computer is awake."
       )
-      .font(.caption)
-      .foregroundColor(.gray)
-      .fixedSize(horizontal: false, vertical: true)
-      .frame(width: 400, alignment: .leading)
+      .font(.system(size: 11))
+        .foregroundStyle(Color.gray).fixedSize(horizontal: false, vertical: true).frame(
+          width: 420, alignment: .leading)
     }
     .padding()
   }

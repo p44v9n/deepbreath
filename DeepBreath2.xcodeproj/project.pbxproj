@@ -32,6 +32,7 @@
 		DF4085172C7E38630027870C /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = DF4085162C7E38630027870C /* RiveRuntime */; };
 		DF90C0AF2C9AC0B3002A9BCA /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = DF90C0AE2C9AC0B3002A9BCA /* KeyboardShortcuts */; };
 		DFD37BEA2C99B51A0095CC33 /* ShadeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD37BE92C99B51A0095CC33 /* ShadeWindow.swift */; };
+		DFFCC3B22C9B0E8500DF4840 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCC3B12C9B0E8500DF4840 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		DF4085132C7E37D80027870C /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		DF90C0B02C9AC1F0002A9BCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DFD37BE92C99B51A0095CC33 /* ShadeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadeWindow.swift; sourceTree = "<group>"; };
+		DFFCC3B12C9B0E8500DF4840 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				DF0ECF4B2C7C7DF100B768DE /* Preview Content */,
 				DF4085132C7E37D80027870C /* Animation.swift */,
 				DF2851892C7F8D7E00D2EC58 /* PrefsView.swift */,
+				DFFCC3B12C9B0E8500DF4840 /* Constants.swift */,
 				DFD37BE92C99B51A0095CC33 /* ShadeWindow.swift */,
 			);
 			path = DeepBreath2;
@@ -339,6 +342,7 @@
 				DF0212DA2C7C9EF6007823BF /* PreferencesWindowController.swift in Sources */,
 				DF4085142C7E37D80027870C /* Animation.swift in Sources */,
 				DF0212D42C7C85B1007823BF /* PrefsManager.swift in Sources */,
+				DFFCC3B22C9B0E8500DF4840 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +514,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeepBreath2/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -541,6 +546,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeepBreath2/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
