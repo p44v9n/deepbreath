@@ -66,14 +66,13 @@ struct ContentView: View {
         stopAnimation()
       }
     }
-    .accentColor(.blue)
   }
 
   private func stopAnimation() {
     shadeWindow?.fadeOut {
       self.animationVisible = false
       self.timer?.invalidate()
-      self.onCloseShade?()  // Call the closure when animation stops
+      self.onCloseShade?()
     }
   }
 
@@ -81,7 +80,6 @@ struct ContentView: View {
     Button("􀍠") {
       showMenu.toggle()
     }
-    .accentColor(.white)
   }
 
   private var menuOptions: some View {

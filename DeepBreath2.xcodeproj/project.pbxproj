@@ -23,13 +23,12 @@
 		DF0ECF582C7C7DF100B768DE /* DeepBreath2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0ECF572C7C7DF100B768DE /* DeepBreath2Tests.swift */; };
 		DF0ECF622C7C7DF100B768DE /* DeepBreath2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0ECF612C7C7DF100B768DE /* DeepBreath2UITests.swift */; };
 		DF0ECF642C7C7DF100B768DE /* DeepBreath2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0ECF632C7C7DF100B768DE /* DeepBreath2UITestsLaunchTests.swift */; };
-		DF1BE9682C8286FD00867408 /* breathing1.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF1BE9672C8286FD00867408 /* breathing1.riv */; };
 		DF1BE96B2C831F9F00867408 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = DF1BE96A2C831F9F00867408 /* LaunchAtLogin */; };
 		DF28518A2C7F8D7E00D2EC58 /* PrefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2851892C7F8D7E00D2EC58 /* PrefsView.swift */; };
-		DF28518E2C81D3B900D2EC58 /* breathing2.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF28518D2C81D3B900D2EC58 /* breathing2.riv */; };
-		DF2851902C81FC0100D2EC58 /* breathing3.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF28518F2C81FC0100D2EC58 /* breathing3.riv */; };
 		DF4085142C7E37D80027870C /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4085132C7E37D80027870C /* Animation.swift */; };
 		DF4085172C7E38630027870C /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = DF4085162C7E38630027870C /* RiveRuntime */; };
+		DF529CFE2C9C3A6C009B8A11 /* breathing_orb.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF529CFC2C9C3A6C009B8A11 /* breathing_orb.riv */; };
+		DF529CFF2C9C3A6C009B8A11 /* breathing_text.riv in Resources */ = {isa = PBXBuildFile; fileRef = DF529CFD2C9C3A6C009B8A11 /* breathing_text.riv */; };
 		DF90C0AF2C9AC0B3002A9BCA /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = DF90C0AE2C9AC0B3002A9BCA /* KeyboardShortcuts */; };
 		DFD37BEA2C99B51A0095CC33 /* ShadeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD37BE92C99B51A0095CC33 /* ShadeWindow.swift */; };
 		DFFCC3B22C9B0E8500DF4840 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCC3B12C9B0E8500DF4840 /* Constants.swift */; };
@@ -73,11 +72,10 @@
 		DF0ECF5D2C7C7DF100B768DE /* DeepBreath2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepBreath2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0ECF612C7C7DF100B768DE /* DeepBreath2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepBreath2UITests.swift; sourceTree = "<group>"; };
 		DF0ECF632C7C7DF100B768DE /* DeepBreath2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepBreath2UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		DF1BE9672C8286FD00867408 /* breathing1.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = breathing1.riv; sourceTree = "<group>"; };
 		DF2851892C7F8D7E00D2EC58 /* PrefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsView.swift; sourceTree = "<group>"; };
-		DF28518D2C81D3B900D2EC58 /* breathing2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = breathing2.riv; sourceTree = "<group>"; };
-		DF28518F2C81FC0100D2EC58 /* breathing3.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = breathing3.riv; sourceTree = "<group>"; };
 		DF4085132C7E37D80027870C /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		DF529CFC2C9C3A6C009B8A11 /* breathing_orb.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = breathing_orb.riv; sourceTree = "<group>"; };
+		DF529CFD2C9C3A6C009B8A11 /* breathing_text.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = breathing_text.riv; sourceTree = "<group>"; };
 		DF90C0B02C9AC1F0002A9BCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DFD37BE92C99B51A0095CC33 /* ShadeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadeWindow.swift; sourceTree = "<group>"; };
 		DFFCC3B12C9B0E8500DF4840 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -141,14 +139,13 @@
 			isa = PBXGroup;
 			children = (
 				DF90C0B02C9AC1F0002A9BCA /* Info.plist */,
-				DF1BE9672C8286FD00867408 /* breathing1.riv */,
+				DF529CFC2C9C3A6C009B8A11 /* breathing_orb.riv */,
+				DF529CFD2C9C3A6C009B8A11 /* breathing_text.riv */,
 				DF0212CA2C7C855C007823BF /* PopoverManager.swift */,
 				DF0212D32C7C85B1007823BF /* PrefsManager.swift */,
 				DF0ECF452C7C7DF000B768DE /* DeepBreath2App.swift */,
 				DF0212D92C7C9EF6007823BF /* PreferencesWindowController.swift */,
 				DF0ECF472C7C7DF000B768DE /* ContentView.swift */,
-				DF28518F2C81FC0100D2EC58 /* breathing3.riv */,
-				DF28518D2C81D3B900D2EC58 /* breathing2.riv */,
 				DF0ECF492C7C7DF100B768DE /* Assets.xcassets */,
 				DF0ECF4E2C7C7DF100B768DE /* DeepBreath2.entitlements */,
 				DF0ECF4B2C7C7DF100B768DE /* Preview Content */,
@@ -300,16 +297,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0ECF4D2C7C7DF100B768DE /* Preview Assets.xcassets in Resources */,
-				DF1BE9682C8286FD00867408 /* breathing1.riv in Resources */,
 				DF02130A2C7E0DAF007823BF /* Prefs 4.png in Resources */,
+				DF529CFE2C9C3A6C009B8A11 /* breathing_orb.riv in Resources */,
+				DF529CFF2C9C3A6C009B8A11 /* breathing_text.riv in Resources */,
 				DF0ECF4A2C7C7DF100B768DE /* Assets.xcassets in Resources */,
 				DF0213032C7E0DA8007823BF /* Menu Bar 1.png in Resources */,
 				DF0213092C7E0DAF007823BF /* Prefs 2.png in Resources */,
-				DF2851902C81FC0100D2EC58 /* breathing3.riv in Resources */,
 				DF02130B2C7E0DAF007823BF /* Prefs 1.png in Resources */,
 				DF02130C2C7E0DAF007823BF /* Prefs 3.png in Resources */,
 				DF0213042C7E0DA8007823BF /* Menu Bar 2.png in Resources */,
-				DF28518E2C81D3B900D2EC58 /* breathing2.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +497,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = DeepBreath2/DeepBreath2.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -533,7 +528,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = DeepBreath2/DeepBreath2.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";

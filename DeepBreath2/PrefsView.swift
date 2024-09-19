@@ -1,7 +1,7 @@
+import KeyboardShortcuts
 import LaunchAtLogin
 import RiveRuntime
 import SwiftUI
-import KeyboardShortcuts
 
 struct PrefsView: View {
   @StateObject private var preferencesManager = PreferencesManager.shared
@@ -103,17 +103,10 @@ struct GeneralPrefsView: View {
             Button("Check now...") {}.disabled(true)
           }
         )
-          
-          Form {
-                      KeyboardShortcuts.Recorder("Use global hotkey:", name: .togglePopover)
-                  }
-          
-        Divider().frame(width: 440)
-        // Picker("Default time:", selection: $preferencesManager.defaultDuration) {
-        //   Text("20 seconds").tag(["Short", 20])
-        //   Text("1 minute").tag(["Medium", 60])
-        //   Text("3 minutes").tag(["Long", 180])
-        // }.frame(width: 200)
+
+        Form {
+          KeyboardShortcuts.Recorder("Use global hotkey:", name: .togglePopover)
+        }
 
         VStack(
           alignment: .leading, spacing: 5,
@@ -165,7 +158,7 @@ struct DisplayPrefsView: View {
 
       Picker("Animation:", selection: $preferencesManager.animationStyle) {
         Text("Text").tag(1)
-        Text("Triangles").tag(2)
+        Text("Orb").tag(2)
         //        Text("Rings").tag(3)
       }.frame(width: 200)
 
@@ -231,7 +224,7 @@ struct DisplayPrefsView: View {
     .onAppear {
       updateRiveViewModel()
     }
-    .onChange(of: preferencesManager.animationStyle) { _ in
+    .onChange(of: preferencesManager.animationStyle) { oldValue, newValue in
       updateRiveViewModel()
     }
   }
@@ -240,13 +233,11 @@ struct DisplayPrefsView: View {
     let fileName: String
     switch preferencesManager.animationStyle {
     case 1:
-      fileName = "breathing1"
+      fileName = "breathing_text"
     case 2:
-      fileName = "breathing2"
-    case 3:
-      fileName = "breathing3"
+      fileName = "breathing_orb"
     default:
-      fileName = "breathing1"
+      fileName = "breathing_text"
     }
     self.riveViewModel = RiveViewModel(fileName: fileName)
     self.riveViewModel?.play(animationName: "6 seconds")
@@ -269,7 +260,7 @@ struct AboutPrefsView: View {
       } else {
         Text("Loading animation...")
           .onAppear {
-            self.riveViewModel = RiveViewModel(fileName: "breathing1")
+            self.riveViewModel = RiveViewModel(fileName: "breathing_text")
             self.riveViewModel?.play(animationName: "6 seconds")
           }
       }
@@ -309,8 +300,8 @@ struct ReminderPrefsView: View {
         "This will show the breathing exercise window at the selected time every hour while your computer is awake."
       )
       .font(.system(size: 11))
-        .foregroundStyle(Color.gray).fixedSize(horizontal: false, vertical: true).frame(
-          width: 420, alignment: .leading)
+      .foregroundStyle(Color.gray).fixedSize(horizontal: false, vertical: true).frame(
+        width: 420, alignment: .leading)
     }
     .padding()
   }
