@@ -58,7 +58,7 @@ struct ContentView: View {
   }
 
   private var startButton: some View {
-    Button("􀊄 Start") {
+    Button(action: {
       if !animationVisible {
         showShadeWindow()
         animationVisible = true
@@ -66,6 +66,8 @@ struct ContentView: View {
       } else {
         stopAnimation()
       }
+    }) {
+      Label("Start", systemImage: "play.fill")
     }
   }
 
@@ -78,18 +80,28 @@ struct ContentView: View {
   }
 
   private var menuButton: some View {
-    Button("􀍠") {
+    Button(action: {
       showMenu.toggle()
+    }) {
+      Image(systemName: "ellipsis")
+        .imageScale(.large)
+
     }
+
   }
 
   private var menuOptions: some View {
     HStack {
-      Button("􀣌 Preferences") {
+      Button(action: {
         showPreferences()
+      }) {
+        Label("Preferences", systemImage: "gearshape.fill")
       }
-      Button("􀁡 Quit") {
+
+      Button(action: {
         NSApplication.shared.terminate(nil)
+      }) {
+        Label("Quit", systemImage: "xmark.circle.fill")
       }
     }
   }

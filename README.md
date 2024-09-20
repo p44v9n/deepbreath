@@ -15,6 +15,7 @@ Download the latest version from [releases tab](https://github.com/p44v9n/deepbr
 
 - Add more animations
 - Use enter key to start animation when popover is open / focussed
+
 - ✅ ~~Set lower macOS version target~~ Now works to 13.0 (lowest support for LaunchAtLogin)
 - ✅ ~~Prefs window doesn't come to front when opened~~
 - ✅ ~~Choose from range of animations~~
