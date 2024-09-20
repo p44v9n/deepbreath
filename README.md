@@ -7,14 +7,16 @@ Download the latest version from [releases tab](https://github.com/p44v9n/deepbr
 ![Screenshot](https://i.imgur.com/Px06I0U.gif)
 
 ## Bugs
-- Set lower macOS version target
+
 - Shade stays active when clicking on menu bar icon to close animation (it disappears when clicking the close button or anywher e on it though)
-- Prefs window doesn't come to front when opened
+- Prefs window doesn't come to front when button is clicked when its already open
 
 ## Todo
+
 - Add more animations
 - Use enter key to start animation when popover is open / focussed
-  
+- ✅ ~~Set lower macOS version target~~ Now works to 13.0 (lowest support for LaunchAtLogin)
+- ✅ ~~Prefs window doesn't come to front when opened~~
 - ✅ ~~Choose from range of animations~~
 - ✅ ~~Hide dock icon~~
 - ✅ ~~Add user-configurable global hotkey https://github.com/sindresorhus/KeyboardShortcuts~~

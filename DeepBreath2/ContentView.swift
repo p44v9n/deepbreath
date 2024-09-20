@@ -51,9 +51,10 @@ struct ContentView: View {
     }
     .frame(maxWidth: 120)
     .labelsHidden()
-    .onChange(of: duration.value) { oldValue, newValue in
+    .onChange(of: duration.value) { newValue in
       duration.name = durationName(for: newValue)
     }
+
   }
 
   private var startButton: some View {

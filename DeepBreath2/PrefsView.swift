@@ -224,7 +224,7 @@ struct DisplayPrefsView: View {
     .onAppear {
       updateRiveViewModel()
     }
-    .onChange(of: preferencesManager.animationStyle) { oldValue, newValue in
+    .onChange(of: preferencesManager.animationStyle) { _ in
       updateRiveViewModel()
     }
   }

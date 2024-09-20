@@ -26,14 +26,10 @@ class PreferencesWindowController: NSWindowController {
     }
 
     self.init(window: window)
+    // Activate the app and bring the window to the front
+    NSApp.activate(ignoringOtherApps: true)
+    window.makeKeyAndOrderFront(self)
 
-    // Make the window come to the front when opened
-    self.showWindow(nil)
-  }
-
-  override func showWindow(_ sender: Any?) {
-    super.showWindow(sender)
-    window?.makeKeyAndOrderFront(nil)
   }
 
   override func close() {

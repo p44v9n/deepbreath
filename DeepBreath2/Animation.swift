@@ -22,7 +22,7 @@ struct AnimationView: View {
       }
     }
 
-    .onChange(of: prefsManager.animationStyle) { oldValue, newValue in
+    .onChange(of: prefsManager.animationStyle) { newValue in
       loadAnimation()
     }
   }
