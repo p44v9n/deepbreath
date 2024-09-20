@@ -1,19 +1,20 @@
 # Deep Breath
 
 A macOS app to calm your mind
-[https://deepbreath.ju.mp/](https://deepbreath.ju.mp/)
 
-![Screenshot](https://i.imgur.com/AaJm62w.png)
+Download the latest version from [releases tab](https://github.com/p44v9n/deepbreath/releases/)
 
-## Bugs
+![Screenshot](https://i.imgur.com/Px06I0U.gif)
 
+## Bugs
+- Set lower macOS version target
 - Shade stays active when clicking on menu bar icon to close animation (it disappears when clicking the close button or anywher e on it though)
 
 ## Todo
-
-- Choose from range of animations
+- Add more animations
 - Use enter key to start animation when popover is open / focussed
-
+  
+- ✅ ~~Choose from range of animations~~
 - ✅ ~~Hide dock icon~~
 - ✅ ~~Add user-configurable global hotkey https://github.com/sindresorhus/KeyboardShortcuts~~
 - ✅ ~~Shade window when animation plays~~
@@ -36,3 +37,4 @@ A macOS app to calm your mind
 - Add contextual reminders (e.g. automatically pop up before a calendar event)
 - Add dark mode
 - Add a pretty dmg installer https://github.com/sindresorhus/create-dmg
+- Submit to app store
