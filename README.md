@@ -9,6 +9,7 @@ Download the latest version from [releases tab](https://github.com/p44v9n/deepbr
 ## Bugs
 - Set lower macOS version target
 - Shade stays active when clicking on menu bar icon to close animation (it disappears when clicking the close button or anywher e on it though)
+- Prefs window doesn't come to front when opened
 
 ## Todo
 - Add more animations
@@ -19,8 +20,8 @@ Download the latest version from [releases tab](https://github.com/p44v9n/deepbr
 - ✅ ~~Add user-configurable global hotkey https://github.com/sindresorhus/KeyboardShortcuts~~
 - ✅ ~~Shade window when animation plays~~
 - ✅ ~~Fix animations timing~~
-- ✅ ~~MDefault amount in Prefs doesn't work~~
-- ✅ ~~MReinstate launch on login~~
+- ✅ ~~Default amount in Prefs doesn't work~~
+- ✅ ~~Reinstate launch on login~~
 - ✅ ~~Move to Rive for animation~~
 - ✅ ~~Use Lottie for animation~~
 - ✅ ~~Add launch on login~~ thanks @sindresohus! https://github.com/sindresorhus/LaunchAtLogin
