@@ -15,6 +15,7 @@
 		DF02130C2C7E0DAF007823BF /* Prefs 3.png in Resources */ = {isa = PBXBuildFile; fileRef = DF0213082C7E0DAF007823BF /* Prefs 3.png */; };
 		DF1BE96B2C831F9F00867408 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = DF1BE96A2C831F9F00867408 /* LaunchAtLogin */; };
 		DF4085172C7E38630027870C /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = DF4085162C7E38630027870C /* RiveRuntime */; };
+		DF4F78D72CB67B6900B98710 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4F78D62CB67B6900B98710 /* WelcomeView.swift */; };
 		DF53DE222CB53468006AC408 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF53DE212CB53468006AC408 /* Info.plist */; };
 		DF90C0AF2C9AC0B3002A9BCA /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = DF90C0AE2C9AC0B3002A9BCA /* KeyboardShortcuts */; };
 		DFAFFA202CB532C400A23FC6 /* breathing_orb.riv in Resources */ = {isa = PBXBuildFile; fileRef = DFAFFA122CB532C400A23FC6 /* breathing_orb.riv */; };
@@ -30,7 +31,6 @@
 		DFAFFA2C2CB532C400A23FC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFFA152CB532C400A23FC6 /* ContentView.swift */; };
 		DFAFFA2D2CB532C400A23FC6 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFFA102CB532C400A23FC6 /* Animation.swift */; };
 		DFAFFA2E2CB532C400A23FC6 /* PrefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFFA1C2CB532C400A23FC6 /* PrefsView.swift */; };
-		DFAFFA2F2CB532C400A23FC6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFFA1E2CB532C400A23FC6 /* SplashScreenView.swift */; };
 		DFAFFA302CB532C400A23FC6 /* PrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFFA1B2CB532C400A23FC6 /* PrefsManager.swift */; };
 		DFAFFA312CB532C400A23FC6 /* PopoverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFFA192CB532C400A23FC6 /* PopoverManager.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +62,7 @@
 		DF0ECF422C7C7DF000B768DE /* BreatheBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreatheBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0ECF532C7C7DF100B768DE /* BreatheBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreatheBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0ECF5D2C7C7DF100B768DE /* BreatheBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreatheBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF4F78D62CB67B6900B98710 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		DF53DE212CB53468006AC408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = BreatheBar/Info.plist; sourceTree = "<group>"; };
 		DFAFFA0B2CB532C400A23FC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFAFFA0E2CB532C400A23FC6 /* .cursorrules */ = {isa = PBXFileReference; lastKnownFileType = text; path = .cursorrules; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		DFAFFA1B2CB532C400A23FC6 /* PrefsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsManager.swift; sourceTree = "<group>"; };
 		DFAFFA1C2CB532C400A23FC6 /* PrefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsView.swift; sourceTree = "<group>"; };
 		DFAFFA1D2CB532C400A23FC6 /* ShadeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadeWindow.swift; sourceTree = "<group>"; };
-		DFAFFA1E2CB532C400A23FC6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +185,8 @@
 				DFAFFA1A2CB532C400A23FC6 /* PreferencesWindowController.swift */,
 				DFAFFA1B2CB532C400A23FC6 /* PrefsManager.swift */,
 				DFAFFA1C2CB532C400A23FC6 /* PrefsView.swift */,
+				DF4F78D62CB67B6900B98710 /* WelcomeView.swift */,
 				DFAFFA1D2CB532C400A23FC6 /* ShadeWindow.swift */,
-				DFAFFA1E2CB532C400A23FC6 /* SplashScreenView.swift */,
 			);
 			path = BreatheBar;
 			sourceTree = "<group>";
@@ -347,9 +347,9 @@
 				DFAFFA2A2CB532C400A23FC6 /* BreatheBar.swift in Sources */,
 				DFAFFA2B2CB532C400A23FC6 /* ShadeWindow.swift in Sources */,
 				DFAFFA2C2CB532C400A23FC6 /* ContentView.swift in Sources */,
+				DF4F78D72CB67B6900B98710 /* WelcomeView.swift in Sources */,
 				DFAFFA2D2CB532C400A23FC6 /* Animation.swift in Sources */,
 				DFAFFA2E2CB532C400A23FC6 /* PrefsView.swift in Sources */,
-				DFAFFA2F2CB532C400A23FC6 /* SplashScreenView.swift in Sources */,
 				DFAFFA302CB532C400A23FC6 /* PrefsManager.swift in Sources */,
 				DFAFFA312CB532C400A23FC6 /* PopoverManager.swift in Sources */,
 			);

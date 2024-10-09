@@ -2,10 +2,11 @@ import KeyboardShortcuts
 import SwiftUI
 
 @main
-struct DeepBreath2App: App {
+struct BreatheBar: App {
   @StateObject private var popoverManager: PopoverManager
   @StateObject private var preferencesManager = PreferencesManager.shared
   @StateObject private var appState: AppState
+  @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
 
   init() {
     let popoverManager = PopoverManager()
@@ -15,6 +16,13 @@ struct DeepBreath2App: App {
   }
 
   var body: some Scene {
+    WindowGroup {
+      if !hasCompletedOnboarding {
+        WelcomeView()
+      } else {
+        EmptyView()
+      }
+    }
 
     Settings {
       EmptyView()
@@ -34,10 +42,6 @@ final class AppState: ObservableObject {
 
     KeyboardShortcuts.onKeyUp(for: .togglePopover) { [weak self] in
       self?.popoverManager.togglePopover(nil)
-    }
-
-    if showSplashScreen {
-      UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
     }
   }
 }
