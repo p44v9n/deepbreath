@@ -17,12 +17,11 @@ struct BreatheBar: App {
 
   var body: some Scene {
     WindowGroup {
-      if !hasCompletedOnboarding {
-        WelcomeView()
-      } else {
-        EmptyView()
-      }
+      WelcomeView()
+        .frame(width: 400, height: 300) // Adjust these values as needed
+        .fixedSize()
     }
+    .windowResizability(.contentSize)
 
     Settings {
       EmptyView()

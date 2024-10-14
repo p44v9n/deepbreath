@@ -18,7 +18,6 @@ class PreferencesManager: ObservableObject {
   @AppStorage("menuBarIcon") var menuBarIcon: String = "Monochrome"
   @AppStorage("showBreathCount") var showBreathCount: Bool = false
   @AppStorage("animationStyle") var animationStyle: Int = 1
-
   @AppStorage("timeBreatheIn") var timeBreatheIn: Int = 5
   @AppStorage("timeBreatheHold") var timeBreatheHold: Int = 5
   @AppStorage("timeBreatheOut") var timeBreatheOut: Int = 5

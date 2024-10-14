@@ -9,43 +9,37 @@ struct WelcomeView: View {
   @StateObject private var preferencesManager = PreferencesManager.shared
   @State private var rotation: Double = 0
   @State private var launchAtLogin = false
-  @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
+  @State private var selectedAnimationStyle: Int = 1  // Default to 1
 
   var body: some View {
     Group {
-      if !hasCompletedOnboarding {
-        VStack {
-          switch currentStep {
-          case 0:
-            firstStep
-          case 1:
-            secondStep
-          case 2:
-            thirdStep
-          default:
-            EmptyView()
-          }
+      VStack {
+        switch currentStep {
+        case 0:
+          firstStep
+        case 1:
+          secondStep
+        case 2:
+          thirdStep
+        default:
+          Text("Invalid step")
         }
-        .frame(width: 400, height: 300)
-        .background(Color.white)
-      } else {
-        EmptyView()
       }
+      .frame(width: 400, height: 300)
+      .background(Color(NSColor.windowBackgroundColor))
     }
     .frame(width: 400, height: 300)
     .fixedSize()
-    .background(
-      WindowAccessor { window in
-        window.styleMask.remove(.resizable)
-        window.setContentSize(NSSize(width: 400, height: 300))
-      })
-
+    .onAppear {
+      print("WelcomeView appeared, currentStep: \(currentStep)")
+      selectedAnimationStyle = preferencesManager.animationStyle  // Initialize with current preference
+    }
   }
 
   var firstStep: some View {
     VStack {
-      if let appIcon = NSImage(named: NSImage.applicationIconName) {
-        Image(nsImage: appIcon)
+      // if let appIcon = NSImage(named: NSImage.applicationIconName) {
+        Image("Logo")
           .resizable()
           .scaledToFill()
           .frame(width: 100, height: 100)
@@ -56,7 +50,7 @@ struct WelcomeView: View {
               rotation = 360
             }
           }
-      }
+
       Text("Welcome to BreatheBar")
         .font(.title)
         .padding()
@@ -64,6 +58,7 @@ struct WelcomeView: View {
       Button("Continue") {
         currentStep += 1
       }
+      
     }
     .frame(width: 400)
   }
@@ -92,69 +87,78 @@ struct WelcomeView: View {
         }
         .padding()
       }
-      .background(Color.white)
+      .background(Color(NSColor.windowBackgroundColor))
     }
     .frame(width: 400)
   }
   var thirdStep: some View {
-    VStack(spacing: 0) {
-      VStack {
-
-        Text("Choose Your Look")
-          .font(.title3)
-          .multilineTextAlignment(.center)
-          .padding(.top, 40)
-        HStack(spacing: 20) {
-          VStack {
-            riveOrb.view()
-              .frame(width: 100, height: 100)
-              .background(Color.gray.opacity(0.2))
-              .cornerRadius(10)
-              .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                  .stroke(
-                    preferencesManager.animationStyle == 2 ? Color.blue : Color.clear, lineWidth: 3)
-              )
-          }
-          .onTapGesture {
-            preferencesManager.animationStyle = 2
-          }
-          VStack {
-            riveText.view()
-              .frame(width: 100, height: 100)
-              .background(Color.gray.opacity(0.2))
-              .cornerRadius(10)
-              .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                  .stroke(
-                    preferencesManager.animationStyle == 1 ? Color.blue : Color.clear, lineWidth: 3)
-              )
-          }
-          .onTapGesture {
-            preferencesManager.animationStyle = 1
-          }
-        }
-        .padding()
+  VStack(spacing: 0) {
+    VStack {
+      Text("Choose Your Look")
+        .font(.title3)
+        .multilineTextAlignment(.center)
+        .padding(.top, 40)
+      HStack(spacing: 20) {
+        AnimationStyleButton(
+          riveViewModel: riveOrb,
+          animationStyle: 1,
+          selectedStyle: $selectedAnimationStyle
+        )
+        AnimationStyleButton(
+          riveViewModel: riveText,
+          animationStyle: 2,
+          selectedStyle: $selectedAnimationStyle
+        )
       }
-      Spacer()
-      Divider()
-      Spacer()
-
-      HStack {
-        LaunchAtLogin.Toggle()
-          .padding()
-        Spacer()
-        Button("Start") {
-          NSApplication.shared.keyWindow?.close()
-          hasCompletedOnboarding = true
-        }
-        .padding()
-      }
-      .background(Color.white)
+      .padding()
     }
-    .frame(width: 400)
-  }
+    Spacer()
+    Divider()
+    Spacer()
 
+    HStack {
+      LaunchAtLogin.Toggle()
+        .padding()
+      Spacer()
+      Button("Start") {
+        preferencesManager.animationStyle = selectedAnimationStyle
+        NSApplication.shared.keyWindow?.close()
+      }
+      .padding()
+    }
+    .background(Color(NSColor.windowBackgroundColor))
+  }
+  .frame(width: 400)
+}
+
+}
+
+struct AnimationStyleButton: View {
+  let riveViewModel: RiveViewModel
+  let animationStyle: Int
+  @Binding var selectedStyle: Int
+
+  var body: some View {
+    Button(action: {
+      selectedStyle = animationStyle
+    }) {
+      ZStack {
+        riveViewModel.view()
+          .allowsHitTesting(false)  // This allows the click to pass through
+        
+        RoundedRectangle(cornerRadius: 10)
+          .fill(Color.clear)  // Invisible fill to capture clicks
+      }
+      .frame(width: 100, height: 100)
+      .background(Color.secondary.opacity(0.2))
+      .cornerRadius(10)
+      .overlay(
+        RoundedRectangle(cornerRadius: 10)
+          .stroke(selectedStyle == animationStyle ? Color.accentColor : Color.clear, lineWidth: 3)
+      )
+    }
+    .buttonStyle(PlainButtonStyle())
+  }
 }
 
 #Preview {
