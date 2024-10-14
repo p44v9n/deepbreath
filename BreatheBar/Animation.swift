@@ -31,11 +31,11 @@ struct AnimationView: View {
     let fileName: String
     switch prefsManager.animationStyle {
     case 1:
-      fileName = "breathing_text"
-    case 2:
       fileName = "breathing_orb"
-    default:
+    case 2:
       fileName = "breathing_text"
+    default:
+      fileName = "breathing_orb"
     }
     self.rive = RiveViewModel(fileName: fileName, stateMachineName: duration.name)
 

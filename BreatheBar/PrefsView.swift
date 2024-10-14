@@ -157,8 +157,8 @@ struct DisplayPrefsView: View {
       }.frame(width: 200)
 
       Picker("Animation:", selection: $preferencesManager.animationStyle) {
-        Text("Text").tag(1)
-        Text("Orb").tag(2)
+        Text("Orb").tag(1)
+        Text("Text").tag(2)
         //        Text("Rings").tag(3)
       }.frame(width: 200)
 
@@ -260,7 +260,7 @@ struct AboutPrefsView: View {
       } else {
         Text("Loading animation...")
           .onAppear {
-            self.riveViewModel = RiveViewModel(fileName: "breathing_text")
+            self.riveViewModel = RiveViewModel(fileName: "breathing_orb")
             self.riveViewModel?.play(animationName: "6 seconds")
           }
       }
@@ -270,7 +270,7 @@ struct AboutPrefsView: View {
       spacing: 15,
 
       content: {
-        Text("**Deep Breath**").font(.system(size: 17))
+        Text("**BreatheBar**").font(.system(size: 17))
         Text("􀪥 Contribute on [GitHub](https://github.com/p44v9n/deepbreath).")
         Text("􁞵 Donate with [Ko-fi](https://ko-fi.com/p44v9n/).")
         Text("􀟱 Made by [Paavan](https://paavandesign.com)")
@@ -293,7 +293,7 @@ struct ReminderPrefsView: View {
           Text("45 minutes past").tag(45)
         }
         .pickerStyle(MenuPickerStyle())
-        .frame(width: 200)
+        .frame(width: 250)
       }
 
       Text(
