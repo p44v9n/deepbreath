@@ -16,7 +16,6 @@
 		DF1BE96B2C831F9F00867408 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = DF1BE96A2C831F9F00867408 /* LaunchAtLogin */; };
 		DF4085172C7E38630027870C /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = DF4085162C7E38630027870C /* RiveRuntime */; };
 		DF4F78D72CB67B6900B98710 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4F78D62CB67B6900B98710 /* WelcomeView.swift */; };
-		DF53DE222CB53468006AC408 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF53DE212CB53468006AC408 /* Info.plist */; };
 		DF90C0AF2C9AC0B3002A9BCA /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = DF90C0AE2C9AC0B3002A9BCA /* KeyboardShortcuts */; };
 		DFAFFA202CB532C400A23FC6 /* breathing_orb.riv in Resources */ = {isa = PBXBuildFile; fileRef = DFAFFA122CB532C400A23FC6 /* breathing_orb.riv */; };
 		DFAFFA222CB532C400A23FC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFAFFA0B2CB532C400A23FC6 /* Preview Assets.xcassets */; };
@@ -60,10 +59,10 @@
 		DF0213072C7E0DAF007823BF /* Prefs 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prefs 1.png"; sourceTree = "<group>"; };
 		DF0213082C7E0DAF007823BF /* Prefs 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prefs 3.png"; sourceTree = "<group>"; };
 		DF0ECF422C7C7DF000B768DE /* BreatheBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreatheBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF0ECF532C7C7DF100B768DE /* BreatheBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreatheBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF0ECF5D2C7C7DF100B768DE /* BreatheBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreatheBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF1087062CBDECD700C03450 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = BreatheBar/Info.plist; sourceTree = "<group>"; };
+		DF1087082CBDED1100C03450 /* BreatheBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreatheBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF1087092CBDED1100C03450 /* BreatheBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreatheBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4F78D62CB67B6900B98710 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		DF53DE212CB53468006AC408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = BreatheBar/Info.plist; sourceTree = "<group>"; };
 		DFAFFA0B2CB532C400A23FC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFAFFA0E2CB532C400A23FC6 /* .cursorrules */ = {isa = PBXFileReference; lastKnownFileType = text; path = .cursorrules; sourceTree = "<group>"; };
 		DFAFFA0F2CB532C400A23FC6 /* .prettierrc */ = {isa = PBXFileReference; lastKnownFileType = text; path = .prettierrc; sourceTree = "<group>"; };
@@ -113,6 +112,7 @@
 		DF0ECF392C7C7DF000B768DE = {
 			isa = PBXGroup;
 			children = (
+				DF1087062CBDECD700C03450 /* Info.plist */,
 				DF0213072C7E0DAF007823BF /* Prefs 1.png */,
 				DF0213052C7E0DAF007823BF /* Prefs 2.png */,
 				DF0213082C7E0DAF007823BF /* Prefs 3.png */,
@@ -121,7 +121,6 @@
 				DF0213022C7E0DA8007823BF /* Menu Bar 2.png */,
 				DFAFFA1F2CB532C400A23FC6 /* BreatheBar */,
 				DF0ECF432C7C7DF000B768DE /* Products */,
-				DF53DE212CB53468006AC408 /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,24 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				DF0ECF422C7C7DF000B768DE /* BreatheBar.app */,
-				DF0ECF532C7C7DF100B768DE /* BreatheBarTests.xctest */,
-				DF0ECF5D2C7C7DF100B768DE /* BreatheBarUITests.xctest */,
+				DF1087082CBDED1100C03450 /* BreatheBarTests.xctest */,
+				DF1087092CBDED1100C03450 /* BreatheBarUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		DFAFFA092CB532C400A23FC6 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		DFAFFA0A2CB532C400A23FC6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		DFAFFA0C2CB532C400A23FC6 /* Preview Content */ = {
@@ -157,20 +142,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		DFAFFA0D2CB532C400A23FC6 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		DFAFFA1F2CB532C400A23FC6 /* BreatheBar */ = {
 			isa = PBXGroup;
 			children = (
-				DFAFFA092CB532C400A23FC6 /* Controllers */,
-				DFAFFA0A2CB532C400A23FC6 /* Models */,
 				DFAFFA0C2CB532C400A23FC6 /* Preview Content */,
-				DFAFFA0D2CB532C400A23FC6 /* Views */,
 				DFAFFA0E2CB532C400A23FC6 /* .cursorrules */,
 				DFAFFA0F2CB532C400A23FC6 /* .prettierrc */,
 				DFAFFA102CB532C400A23FC6 /* Animation.swift */,
@@ -231,7 +206,7 @@
 			);
 			name = BreatheBarTests;
 			productName = DeepBreath2Tests;
-			productReference = DF0ECF532C7C7DF100B768DE /* BreatheBarTests.xctest */;
+			productReference = DF1087082CBDED1100C03450 /* BreatheBarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		DF0ECF5C2C7C7DF100B768DE /* BreatheBarUITests */ = {
@@ -249,7 +224,7 @@
 			);
 			name = BreatheBarUITests;
 			productName = DeepBreath2UITests;
-			productReference = DF0ECF5D2C7C7DF100B768DE /* BreatheBarUITests.xctest */;
+			productReference = DF1087092CBDED1100C03450 /* BreatheBarUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -260,7 +235,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					DF0ECF412C7C7DF000B768DE = {
 						CreatedOnToolsVersion = 15.4;
@@ -317,7 +292,6 @@
 				DF02130B2C7E0DAF007823BF /* Prefs 1.png in Resources */,
 				DF02130C2C7E0DAF007823BF /* Prefs 3.png in Resources */,
 				DF0213042C7E0DA8007823BF /* Menu Bar 2.png in Resources */,
-				DF53DE222CB53468006AC408 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +393,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -482,6 +457,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -513,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 9Y7T3G8TQN;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -544,6 +521,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 9Y7T3G8TQN;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -571,6 +549,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9Y7T3G8TQN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -589,6 +568,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9Y7T3G8TQN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -606,6 +586,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9Y7T3G8TQN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -622,6 +603,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9Y7T3G8TQN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;

@@ -3,7 +3,7 @@ import RiveRuntime
 import SwiftUI
 
 struct WelcomeView: View {
-  @State private var currentStep = 0
+  @State private var currentStep = 1
   @State private var riveText = RiveViewModel(fileName: "breathing_text")
   @State private var riveOrb = RiveViewModel(fileName: "breathing_orb")
   @StateObject private var preferencesManager = PreferencesManager.shared
@@ -31,7 +31,6 @@ struct WelcomeView: View {
     .frame(width: 400, height: 300)
     .fixedSize()
     .onAppear {
-      print("WelcomeView appeared, currentStep: \(currentStep)")
       selectedAnimationStyle = preferencesManager.animationStyle  // Initialize with current preference
     }
   }
@@ -64,70 +63,79 @@ struct WelcomeView: View {
   }
 
   var secondStep: some View {
-    VStack(spacing: 0) {
-      VStack {
-        Text("To start using BreatheBar,\nclick on this icon in your menu bar.")
-          .multilineTextAlignment(.center)
-          .padding(.top, 40)
-        Spacer()
-      }
-      .frame(width: 400, height: 250.0)
-      .background(
-        Image("Welcome")
-          .resizable()
-          .scaledToFill()
-      )
-
-      Divider()
-
-      HStack {
-        Spacer()
-        Button("Continue") {
-          currentStep += 1
+      VStack(spacing: 0) {
+        VStack {
+//            Spacer()
+          Text("Choose Your Look")
+            .font(.title3)
+            .multilineTextAlignment(.center)
+            .padding(.top, 40)
+          HStack(spacing: 20) {
+            AnimationStyleButton(
+              riveViewModel: riveOrb,
+              animationStyle: 1,
+              selectedStyle: $selectedAnimationStyle
+            )
+            AnimationStyleButton(
+              riveViewModel: riveText,
+              animationStyle: 2,
+              selectedStyle: $selectedAnimationStyle
+            )
+          }
+          .padding()
+//            Spacer()
         }
-        .padding()
+//          Spacer()
+        Divider()
+//          Spacer()
+          
+          HStack {
+            Spacer()
+            
+            Button("Continue") {
+              currentStep += 1
+            }
+
+          }
+          .padding()
+      
+        .background(Color(NSColor.windowBackgroundColor))
       }
-      .background(Color(NSColor.windowBackgroundColor))
-    }
-    .frame(width: 400)
+  
+    
   }
   var thirdStep: some View {
-  VStack(spacing: 0) {
-    VStack {
-      Text("Choose Your Look")
-        .font(.title3)
-        .multilineTextAlignment(.center)
-        .padding(.top, 40)
-      HStack(spacing: 20) {
-        AnimationStyleButton(
-          riveViewModel: riveOrb,
-          animationStyle: 1,
-          selectedStyle: $selectedAnimationStyle
+      VStack(spacing: 0) {
+        VStack {
+          Text("To start using BreatheBar,\nclick on this icon in your menu bar.")
+            .multilineTextAlignment(.center)
+            .padding(.top, 40)
+          Spacer()
+        }
+        .frame(width: 400, height: 250.0)
+        .background(
+          Image("Welcome")
+            .resizable()
+            .scaledToFill()
         )
-        AnimationStyleButton(
-          riveViewModel: riveText,
-          animationStyle: 2,
-          selectedStyle: $selectedAnimationStyle
-        )
-      }
-      .padding()
-    }
-    Spacer()
-    Divider()
-    Spacer()
+          Spacer()
+                  Divider()
+          
+                    
 
-    HStack {
-      LaunchAtLogin.Toggle()
-        .padding()
-      Spacer()
-      Button("Start") {
-        preferencesManager.animationStyle = selectedAnimationStyle
-        NSApplication.shared.keyWindow?.close()
+          HStack {
+            LaunchAtLogin.Toggle()
+              .padding()
+            Spacer()
+            Button("Start") {
+              preferencesManager.animationStyle = selectedAnimationStyle
+              NSApplication.shared.keyWindow?.close()
+            }
+            .padding()
+          }
+          .background(Color(NSColor.windowBackgroundColor))
+        Spacer()
       }
-      .padding()
-    }
-    .background(Color(NSColor.windowBackgroundColor))
-  }
   .frame(width: 400)
 }
 
