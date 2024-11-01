@@ -3,7 +3,7 @@ import RiveRuntime
 import SwiftUI
 
 struct WelcomeView: View {
-  @State private var currentStep = 1
+  @State private var currentStep = 0
   @State private var riveText = RiveViewModel(fileName: "breathing_text")
   @State private var riveOrb = RiveViewModel(fileName: "breathing_orb")
   @StateObject private var preferencesManager = PreferencesManager.shared
@@ -83,11 +83,11 @@ struct WelcomeView: View {
             )
           }
           .padding()
-//            Spacer()
+            Spacer()
         }
-//          Spacer()
+          Spacer()
         Divider()
-//          Spacer()
+          Spacer()
           
           HStack {
             Spacer()
