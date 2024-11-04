@@ -271,9 +271,8 @@ struct AboutPrefsView: View {
 
       content: {
         Text("**BreatheBar**").font(.system(size: 17))
-        Text("􀪥 Contribute on [GitHub](https://github.com/p44v9n/deepbreath).")
-        Text("􁞵 Donate with [Ko-fi](https://ko-fi.com/p44v9n/).")
-        Text("􀟱 Made by [Paavan](https://paavandesign.com)")
+        Text("Contribute on [GitHub](https://github.com/p44v9n/deepbreath).")
+        Text("Made by [Paavan](https://paavandesign.com)")
       })
   }
 }

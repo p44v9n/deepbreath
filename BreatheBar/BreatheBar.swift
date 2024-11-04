@@ -13,7 +13,7 @@ struct BreatheBar: App {
     _popoverManager = StateObject(wrappedValue: popoverManager)
     _appState = StateObject(wrappedValue: AppState(popoverManager: popoverManager))
 
-  }
+  } 
 
   var body: some Scene {
     WindowGroup {
