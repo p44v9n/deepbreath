@@ -1,8 +1,8 @@
-# Deep Breath
+# BreatheBar
 
 A macOS app to calm your mind
 
-Download the latest version from [releases tab](https://github.com/p44v9n/deepbreath/releases/)
+Download the latest version from [releases tab](https://github.com/p44v9n/breathebar/releases/)
 
 ![Screenshot](https://i.imgur.com/Px06I0U.gif)
 
