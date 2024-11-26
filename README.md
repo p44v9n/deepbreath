@@ -2,7 +2,7 @@
 
 A macOS app to calm your mind
 
-Download the latest version from [releases tab](https://github.com/p44v9n/breathebar/releases/)
+Download the latest version from [releases tab](https://github.com/p44v9n/breathebar/releases/) or the [Mac App Store](https://apps.apple.com/gb/app/breathebar/id6736946851?mt=12)
 
 ![Screenshot](https://i.imgur.com/Px06I0U.gif)
 
